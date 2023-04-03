@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight;
     private float dirX;
     
-    private enum MovementState { Idle, Run, Jump, Falling }
+    private enum MovementState { Idle, Run, JumpUp, JumpDown, Roll, AirAtk, Atk1, Atk2, Atk3 }
     private MovementState movementState;
 
     private void Awake()
@@ -83,11 +83,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (rigidBody.velocity.y > 0.1f)
         {
-            movementState = MovementState.Jump;
+            movementState = MovementState.JumpUp;
         }
         else if (rigidBody.velocity.y < -0.1f)
         {
-            movementState = MovementState.Falling;
+            movementState = MovementState.JumpDown;
         }
 
         animator.SetInteger("State", (int)movementState);
