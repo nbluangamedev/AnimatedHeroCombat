@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Transform playerSpawnPoint;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rigidBody;
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     //[SerializeField] private float dustFormationPeriod;
     //private float counter;
     private float dirX;
-    private bool isNotDoubleJump;
+    private bool canDoubleJump;
 
     //private bool canDash = true;
     //private bool isDashing;
@@ -30,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     //private float dashingTime = 0.2f;
     //private float dashingCooldown = 1f;
 
+    private enum AttackState { Attack1, Attack2, Attack3 }
+    private AttackState attackState;
     private enum MovementState { Idle, Run, JumpUp, JumpDown }
     private MovementState movementState;
 
@@ -68,6 +71,8 @@ public class PlayerMovement : MonoBehaviour
 
         Jumping();
 
+        AirAttack();
+
         UpdateAnimations();
 
         //if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
@@ -88,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         //}
 
         Moving();
+        Attack();
     }
 
     private void Moving()
@@ -102,26 +108,43 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded() && !Input.GetButton("Jump"))
         {
-            isNotDoubleJump = false;
+            canDoubleJump = false;
         }
 
         if (Input.GetButtonDown("Jump"))
         {
-            if (IsGrounded() || isNotDoubleJump)
+            if (IsGrounded() || canDoubleJump)
             {
                 //if (AudioManager.HasInstance)
                 //{
                 //    AudioManager.Instance.PlaySE(AUDIO.SE_JUMP);
                 //}
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpHeight);
-                isNotDoubleJump = !isNotDoubleJump;
-                animator.SetBool("DoubleJump", !isNotDoubleJump);
-                if (!isNotDoubleJump)
-                {
-                    //jumpEffect.Play();
-                }
+                canDoubleJump = !canDoubleJump;
+                animator.SetBool("DoubleJump", !canDoubleJump);
+                //if (!canDoubleJump)
+                //{
+                //    jumpEffect.Play();
+                //}
             }
         }
+    }
+
+    private void AirAttack()
+    {
+        if (!IsGrounded())
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                animator.SetBool("AirAttack", true);
+            }
+            else animator.SetBool("AirAttack", false);
+        }
+    }
+
+    private void Attack()
+    {
+
     }
 
     private void UpdateAnimations()
@@ -150,7 +173,20 @@ public class PlayerMovement : MonoBehaviour
             movementState = MovementState.JumpDown;
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            attackState = AttackState.Attack1;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            attackState = AttackState.Attack1;
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            attackState = AttackState.Attack1;
+        }
         animator.SetInteger("State", (int)movementState);
+        animator.SetInteger("Attack", (int)attackState);
     }
 
     private bool IsGrounded()
@@ -173,4 +209,32 @@ public class PlayerMovement : MonoBehaviour
     //    yield return new WaitForSeconds(dashingCooldown);
     //    canDash = true;
     //}
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        //if (AudioManager.HasInstance)
+        //{
+        //    AudioManager.Instance.PlaySE(AUDIO.SE_DEATH);
+        //}
+        rigidBody.bodyType = RigidbodyType2D.Static;
+        animator.SetTrigger("Death");
+    }
+
+    private void Restart()
+    {
+        this.transform.position = playerSpawnPoint.position;
+        rigidBody.bodyType = RigidbodyType2D.Dynamic;
+        animator.Rebind();
+    }
+
+    //viet ham tao box collider2d toi cho chem collider toi nhan vat
 }

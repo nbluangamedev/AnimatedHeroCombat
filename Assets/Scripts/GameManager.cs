@@ -41,7 +41,7 @@ public class GameManager : BaseManager<GameManager>
     public void RestartGame()
     {
         scores = 0;
-        ChangeScene("Menu");
+        ChangeScene("Level1");
 
         //if (UIManager.HasInstance)
         //{
