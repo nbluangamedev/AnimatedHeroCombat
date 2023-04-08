@@ -42,10 +42,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027725816, y: -0.29457796}
+  m_Offset: {x: 0.07592261, y: -0.3558398}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.743234, y: 1.9335835}
+  m_Size: {x: 2.4298046, y: 1.8110598}
   m_EdgeRadius: 0
 --- !u!114 &1794066750
 MonoBehaviour:
@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 5402385154105822363}
   - component: {fileID: 4784994269372029850}
   - component: {fileID: 2111260994366477590}
+  - component: {fileID: 1315770169}
   m_Layer: 8
   m_Name: BossEnemy
   m_TagString: Untagged
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
+  walkStopRate: 3
   attackZone: {fileID: 1794066750}
   hasTarget: 0
 --- !u!114 &4784994269372029850
@@ -259,3 +261,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1315770169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982036589511727723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc9486ef50398f4ba0f3cf4d51bd93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.25
