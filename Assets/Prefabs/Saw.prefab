@@ -96,3 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 3
+  movingSpeed: 2
+  Waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
