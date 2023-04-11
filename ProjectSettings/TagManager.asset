@@ -20,9 +20,9 @@ TagManager:
   - Enemy
   - PlayerHitBox
   - EnemyHitBox
-  - 
-  - 
-  - 
+  - GroundDetection
+  - SlopeDetection
+  - Health
   - PostProcessing
   - 
   - 

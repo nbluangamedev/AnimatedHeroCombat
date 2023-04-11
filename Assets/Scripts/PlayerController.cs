@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
 
     TouchingDirections touchingDirections;
+    Damageable damageable;
 
     public float CurrentSpeed
     {
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
     }
 
     private void SetFacingDirection(Vector2 runInput)
@@ -103,13 +105,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool CanAttack
-    {
-        get
-        {
-            return animator.GetBool(AnimationStrings.canAttack);
-        }
-    }
+    //public bool CanAttack
+    //{
+    //    get
+    //    {
+    //        return animator.GetBool(AnimationStrings.canAttack);
+    //    }
+    //}
 
     public bool IsAlive
     {
@@ -118,10 +120,11 @@ public class PlayerController : MonoBehaviour
             return animator.GetBool(AnimationStrings.isAlive);
         }
     }
-
+        
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
+        if(!damageable.LockVelocity)
+            rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
@@ -152,8 +155,22 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            if (CanAttack)
+            //if (CanAttack)
                 animator.SetTrigger(AnimationStrings.attackTrigger);
         }
+    }
+
+    public void OnSpellAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            //if (CanAttack)
+                animator.SetTrigger(AnimationStrings.spellAttackTrigger);
+        }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity=new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }
