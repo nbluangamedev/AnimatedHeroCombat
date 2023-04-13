@@ -9,6 +9,8 @@ public class GamePanel : MonoBehaviour
     private TextMeshProUGUI numberOfCherries;
     [SerializeField]
     private TextMeshProUGUI timeText;
+    [SerializeField]
+    private HealthBar healthBar;
     public TextMeshProUGUI NumberOfCherries => numberOfCherries;
     private float timeRemaining;
     private bool timerIsRunning = false;
@@ -17,17 +19,21 @@ public class GamePanel : MonoBehaviour
     {
         SetTimeRemain(120);
     }
+    private void Start()
+    {
+        healthBar.gameObject.SetActive(true);
+    }
 
     private void OnEnable()
     {
         SetTimeRemain(120);
         timerIsRunning = true;
-        //ItemCollector.collectCherryDelegate += OnPlayerCollect;
+        ItemCollector.collectDiamondDelegate += OnPlayerCollect;
     }
 
     private void OnDisable()
     {
-        //ItemCollector.collectCherryDelegate -= OnPlayerCollect;
+        ItemCollector.collectDiamondDelegate -= OnPlayerCollect;
     }
 
     private void Update()

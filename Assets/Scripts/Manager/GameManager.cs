@@ -6,6 +6,35 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : BaseManager<GameManager>
 {
+    private int playerHealth = 100;
+    public int PlayerHealth
+    {
+        get
+        {
+            return playerHealth;
+        }
+        set
+        {
+            playerHealth = value;
+            //healthChanged?.Invoke(health, MaxHealth);
+            //if (playerHealth <= 0)
+                //IsAlive = false;
+        }
+    }
+
+    private int playerMaxHealth = 100;
+    public int PlayerMaxHealth
+    {
+        get { return playerMaxHealth; }
+        set { playerMaxHealth = value; }
+    }
+
+    public void UpdatePlayerHealth(int h, int mh)
+    {
+        playerHealth = h;
+        playerMaxHealth = mh;
+    }
+
     private int scores = 0;
     public int Scores => scores;
 
@@ -41,16 +70,16 @@ public class GameManager : BaseManager<GameManager>
     public void RestartGame()
     {
         scores = 0;
-        ChangeScene("Level1");
+        ChangeScene("Menu");
 
-        //if (UIManager.HasInstance)
-        //{
-        //    UIManager.Instance.ActiveVictoryPanel(false);
-        //    UIManager.Instance.ActiveGamePanel(false);
-        //    UIManager.Instance.ActiveLosePanel(false);
-        //    UIManager.Instance.ActiveMenuPanel(true);
-        //    UIManager.Instance.GamePanel.NumberOfCherries.SetText("0");
-        //}
+        if (UIManager.HasInstance)
+        {
+            UIManager.Instance.ActiveVictoryPanel(false);
+            UIManager.Instance.ActiveGamePanel(false);
+            UIManager.Instance.ActiveLosePanel(false);
+            UIManager.Instance.ActiveMenuPanel(true);
+            UIManager.Instance.GamePanel.NumberOfCherries.SetText("0");
+        }
     }
 
     public void EndGame()
