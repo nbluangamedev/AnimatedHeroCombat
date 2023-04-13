@@ -6,8 +6,9 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
+    //public UnityEvent<int, int> healthChanged;
     //public UnityEvent damageableDeath;
-    public UnityEvent<int, int> healthChanged;
+    GameManager gameManager;
 
     Animator animator;
 
@@ -31,7 +32,7 @@ public class Damageable : MonoBehaviour
         set
         {
             health = value;
-            healthChanged?.Invoke(health, maxHealth);
+            //healthChanged?.Invoke(health, MaxHealth);
             if (health <= 0)
                 IsAlive = false;
         }
@@ -73,6 +74,7 @@ public class Damageable : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        gameManager = GetComponent<GameManager>();
     }
     private void Update()
     {
@@ -93,8 +95,9 @@ public class Damageable : MonoBehaviour
     public bool Hit(int damage, Vector2 knockback)
     {
         if (IsAlive && !isInvincible)
-        {
-            Health -= damage;
+        {            
+            gameManager.PlayerHealth -= damage;
+            //Health -= damage;
             isInvincible = true;
 
             //Notify other subscribed components that the damageable was hit to handle the knockback and such
