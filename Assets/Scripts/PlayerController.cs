@@ -120,10 +120,10 @@ public class PlayerController : MonoBehaviour
             return animator.GetBool(AnimationStrings.isAlive);
         }
     }
-        
+
     private void FixedUpdate()
     {
-        if(!damageable.LockVelocity)
+        if (!damageable.LockVelocity)
             rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             //if (CanAttack)
-                animator.SetTrigger(AnimationStrings.attackTrigger);
+            animator.SetTrigger(AnimationStrings.attackTrigger);
         }
     }
 
@@ -165,12 +165,12 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             //if (CanAttack)
-                animator.SetTrigger(AnimationStrings.spellAttackTrigger);
+            animator.SetTrigger(AnimationStrings.spellAttackTrigger);
         }
     }
 
     public void OnHit(int damage, Vector2 knockback)
     {
-        rb.velocity=new Vector2(knockback.x, rb.velocity.y + knockback.y);
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }
