@@ -131,7 +131,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013882935, y: -0.3558398}
+  m_Offset: {x: -0.33879286, y: -0.3558398}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -142,7 +142,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.305725, y: 1.8110598}
+  m_Size: {x: 3.0110755, y: 1.8110598}
   m_EdgeRadius: 0
 --- !u!114 &1794066750
 MonoBehaviour:
@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 4784994269372029850}
   - component: {fileID: 2111260994366477590}
   - component: {fileID: 1315770169}
+  - component: {fileID: 1036122127}
   m_Layer: 8
   m_Name: BossEnemy
   m_TagString: Untagged
@@ -383,11 +384,27 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
+  enemyHealChanged:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 100
   health: 100
   isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
+--- !u!114 &1036122127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982036589511727723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cc12448fd918e4c89a7d6a5370ba9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDamageable: {fileID: 1315770169}
 --- !u!1 &5610989576779513797
 GameObject:
   m_ObjectHideFlags: 0

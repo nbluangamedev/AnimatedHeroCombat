@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,7 @@ public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent<int, int> healthChanged;
+    public UnityEvent<int> enemyHealChanged;
 
     Animator animator;
 
@@ -30,9 +32,13 @@ public class Damageable : MonoBehaviour
         set
         {
             health = value;
-            healthChanged?.Invoke(health, maxHealth);
+            healthChanged?.Invoke(health, MaxHealth);
             if (health <= 0)
+            {
+                enemyHealChanged?.Invoke(health);
                 IsAlive = false;
+            }
+                
         }
     }
 
@@ -73,6 +79,7 @@ public class Damageable : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
     private void Update()
     {
         if (isInvincible)

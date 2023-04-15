@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 7988848039245265717}
   - component: {fileID: 7988848039245265712}
   - component: {fileID: 7988848039245265719}
-  - component: {fileID: 7988848039245265718}
+  - component: {fileID: 4180408384792800603}
   m_Layer: 0
   m_Name: MenuPanel
   m_TagString: Untagged
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7988848039245265718
+--- !u!114 &4180408384792800603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -811,8 +811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd3c6f34af6b924e9a92238bafa4ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howToPlayBtn: {fileID: 0}
-  howToPlayImage: {fileID: 0}
+  howToPlayBtn: {fileID: 7988848039606654392}
+  howToPlayImage: {fileID: 7988848040090425560}
 --- !u!1 &7988848039245879787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +1992,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7988848039606654395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4180408384792800603}
+        m_TargetAssemblyTypeName: MenuPanel, Assembly-CSharp
+        m_MethodName: OnHowToPlayButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7988848039607057351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2229,7 @@ GameObject:
   - component: {fileID: 7988848039726762308}
   - component: {fileID: 7988848039726762311}
   - component: {fileID: 7988848039726762310}
-  - component: {fileID: 7988848039726762309}
+  - component: {fileID: 14468370629053623}
   m_Layer: 0
   m_Name: SettingPanel
   m_TagString: Untagged
@@ -2243,7 +2255,7 @@ RectTransform:
   - {fileID: 7988848040030447365}
   - {fileID: 7988848041199628551}
   m_Father: {fileID: 7988848040423498912}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2288,7 +2300,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7988848039726762309
+--- !u!114 &14468370629053623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3567,7 +3579,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7988848039245265718}
+      - m_Target: {fileID: 4180408384792800603}
         m_TargetAssemblyTypeName: MenuPanel, Assembly-CSharp
         m_MethodName: OnSettingButtonClick
         m_Mode: 1
@@ -3975,7 +3987,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7988848039726762309}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingPanel, Assembly-CSharp
         m_MethodName: OnCancelButtonClick
         m_Mode: 1
@@ -4073,6 +4085,7 @@ GameObject:
   - component: {fileID: 7988848040090425561}
   - component: {fileID: 7988848040090425563}
   - component: {fileID: 7988848040090425562}
+  - component: {fileID: 945344517035438067}
   m_Layer: 0
   m_Name: HowToPlayImage
   m_TagString: Untagged
@@ -4137,6 +4150,62 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &945344517035438067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988848040090425560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7988848040090425562}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4180408384792800603}
+        m_TargetAssemblyTypeName: MenuPanel, Assembly-CSharp
+        m_MethodName: OnHowToPlayButtonImgClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7988848040093032146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4545,7 +4614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.948914, y: -114}
+  m_AnchoredPosition: {x: -18.948975, y: -114}
   m_SizeDelta: {x: -884.2821, y: 318.9004}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7988848040312002167
@@ -4751,12 +4820,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 7988848039245265717}
-  - {fileID: 7988848040689882637}
   - {fileID: 7988848039726762308}
+  - {fileID: 7039633788757815962}
   - {fileID: 7988848039245879780}
   - {fileID: 7988848041004377856}
   - {fileID: 7988848041224381612}
-  - {fileID: 7039633788757815962}
+  - {fileID: 7988848040689882637}
   m_Father: {fileID: 7988848040535237824}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5094,8 +5163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39f26e9e1c33824bb9af7ca1949df02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPanel: {fileID: 7988848039245265718}
-  settingPanel: {fileID: 7988848039726762309}
+  menuPanel: {fileID: 0}
+  settingPanel: {fileID: 0}
   gamePanel: {fileID: 1747530693}
   pausePanel: {fileID: 7988848039245879781}
   victoryPanel: {fileID: 7988848041004377857}
@@ -5380,7 +5449,7 @@ RectTransform:
   - {fileID: 7988848040299283648}
   - {fileID: 7988848040531150890}
   m_Father: {fileID: 7988848040423498912}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6428,7 +6497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7988848039245265718}
+      - m_Target: {fileID: 4180408384792800603}
         m_TargetAssemblyTypeName: MenuPanel, Assembly-CSharp
         m_MethodName: OnStartButtonClick
         m_Mode: 1
@@ -6956,7 +7025,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7988848039726762309}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingPanel, Assembly-CSharp
         m_MethodName: OnSubmitButtonClick
         m_Mode: 1
@@ -7246,7 +7315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7039633788757815962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7265,7 +7334,7 @@ RectTransform:
   - {fileID: 1240864269547784298}
   - {fileID: 3249465509763984375}
   m_Father: {fileID: 7988848040423498912}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7403,11 +7472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766899634717875931, guid: c78e128d362852445829d04d883b32fa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 4766899634717875931, guid: c78e128d362852445829d04d883b32fa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4883728684881870503, guid: c78e128d362852445829d04d883b32fa, type: 3}
       propertyPath: m_Pivot.x
@@ -7491,6 +7560,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4883728684881870503, guid: c78e128d362852445829d04d883b32fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327630579955335911, guid: c78e128d362852445829d04d883b32fa, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
