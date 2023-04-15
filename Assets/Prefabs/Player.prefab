@@ -110,9 +110,10 @@ GameObject:
   - component: {fileID: 1099501071}
   - component: {fileID: 1478313177}
   - component: {fileID: 103169575}
+  - component: {fileID: 1319627105493708856}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,6 +325,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 55a39030-388b-4510-a43c-c57910a17ad0
     m_ActionName: Player/SpellAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3362858816758681826}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRoll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5d35dae4-a448-486d-8677-4f3141cfe36b
+    m_ActionName: Player/Roll[/Keyboard/leftCtrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -381,9 +398,6 @@ MonoBehaviour:
   runSpeed: 20
   jumpImpulse: 25
   airWalkSpeed: 10
-  Ground:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &3209019684047394446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +502,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3614048278003314778}
+        m_TargetAssemblyTypeName: Damageable, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   maxHealth: 100
   health: 100
   isAlive: 1
@@ -503,6 +532,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 113569d5a005178439b35fbf6000b152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1319627105493708856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614048278003314778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f36bdec2a4d2240b99b7d65004554b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5729920302582737218

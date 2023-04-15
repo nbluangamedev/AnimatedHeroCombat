@@ -267,6 +267,9 @@ MonoBehaviour:
   damageableHit:
     m_PersistentCalls:
       m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 50
   health: 50
   isAlive: 1

@@ -9,8 +9,7 @@ public class GamePanel : MonoBehaviour
     private TextMeshProUGUI numberOfCherries;
     [SerializeField]
     private TextMeshProUGUI timeText;
-    [SerializeField]
-    private HealthBar healthBar;
+
     public TextMeshProUGUI NumberOfCherries => numberOfCherries;
     private float timeRemaining;
     private bool timerIsRunning = false;
@@ -18,10 +17,6 @@ public class GamePanel : MonoBehaviour
     private void Awake()
     {
         SetTimeRemain(120);
-    }
-    private void Start()
-    {
-        healthBar.gameObject.SetActive(true);
     }
 
     private void OnEnable()

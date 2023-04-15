@@ -11,52 +11,28 @@ public class HealthBar : MonoBehaviour
 
     Damageable playerDamageable;
 
-    public delegate void PlayerHealth(int playerHealth, int playerMaxHealth); //Dinh nghia ham delegate 
-    public static PlayerHealth playerHealthDelegate; //Khai bao ham delegate
-    private int currentplayerHealth=100, currentplayerMaxHealth=100;
-
     private void Awake()
     {
-        playerDamageable = GameObject.FindGameObjectWithTag("Player").GetComponent<Damageable>();
-        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerDamageable = player.GetComponent<Damageable>();
     }
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        if (GameManager.HasInstance)
-        {
-            currentplayerHealth = GameManager.Instance.PlayerHealth;
-            currentplayerMaxHealth = GameManager.Instance.PlayerMaxHealth;
-        }
+        healthBar.value = CalculateSliderPercentage(playerDamageable.Health, playerDamageable.MaxHealth);
+        healthBarText.text = "HP " + playerDamageable.Health + " / " + playerDamageable.MaxHealth;
     }
 
     private void OnEnable()
     {
-        healthBar.value = CalculateSliderPercentage(currentplayerHealth, currentplayerMaxHealth);
-        healthBarText.text = "HP: " + currentplayerHealth + " / " + currentplayerMaxHealth;
+        playerDamageable.healthChanged.AddListener(OnPlayerHealthChanged);
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        GameManager.Instance.UpdatePlayerHealth(currentplayerHealth, currentplayerMaxHealth);
-        playerHealthDelegate(currentplayerHealth, currentplayerMaxHealth); //Broadcast event
+        playerDamageable.healthChanged.RemoveListener(OnPlayerHealthChanged);
     }
-
-    //private void OnEnable()
-    //{
-    //    if(playerDamageable == null)
-    //    {
-    //        playerDamageable = GameObject.FindGameObjectWithTag("Player").GetComponent<Damageable>();
-    //    }
-    //    healthBar.value = CalculateSliderPercentage(playerDamageable.Health, playerDamageable.MaxHealth);
-    //    healthBarText.text = "HP: " + playerDamageable.Health + " / " + playerDamageable.MaxHealth;
-    //    playerDamageable.healthChanged.AddListener(OnPlayerHealthChanged);
-    //}
-
-    //private void OnDisable()
-    //{
-    //    playerDamageable.healthChanged.RemoveListener(OnPlayerHealthChanged);
-    //}
 
     private float CalculateSliderPercentage(float currentHealth, float maxHealth)
     {
@@ -66,6 +42,6 @@ public class HealthBar : MonoBehaviour
     private void OnPlayerHealthChanged(int newHealth, int maxHealth)
     {
         healthBar.value = CalculateSliderPercentage(newHealth, maxHealth);
-        healthBarText.text = "HP: " + newHealth + " / " + maxHealth;
+        healthBarText.text = "HP " + newHealth + " / " + maxHealth;
     }
 }
