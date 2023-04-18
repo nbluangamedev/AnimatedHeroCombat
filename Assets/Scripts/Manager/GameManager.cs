@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : BaseManager<GameManager>
-{    
+{   
     private int scores = 0;
     public int Scores => scores;
 

@@ -35,8 +35,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem touchParticle;
     float counter;
 
+    [SerializeField] PhysicsMaterial2D noFriction;
+    [SerializeField] PhysicsMaterial2D highFriction;
+
     TouchingDirections touchingDirections;
     Damageable damageable;
+
+    bool isJumping = false;
 
     public float CurrentSpeed
     {
@@ -155,6 +160,15 @@ public class PlayerController : MonoBehaviour
                 movementParticle.Play();
                 counter = 0;
             }
+        }
+
+        if (moveInput.x != 0)
+        {
+            rb.sharedMaterial = noFriction;
+        }
+        else
+        {
+            rb.sharedMaterial = highFriction;
         }
     }
 
@@ -276,5 +290,15 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+
+    public void SetJump(bool value)
+    {
+        isJumping = value;
+    }
+
+    public void SetDoubleJump(bool value)
+    {
+        CanDoubleJump = !value;
     }
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 public class TouchingDirections : MonoBehaviour
 {
     public ContactFilter2D castFilter;
-    private CapsuleCollider2D touchingCollider;
-    public float groundDistance = 0.1f;
+    private Collider2D touchingCollider;
+    public float groundDistance = 1f;
     public float wallDistance = 0.2f;
     public float ceilingDistance = 0.1f;
 

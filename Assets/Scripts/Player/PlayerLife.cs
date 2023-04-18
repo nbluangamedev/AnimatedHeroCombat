@@ -66,20 +66,6 @@ public class PlayerLife : MonoBehaviour
     }
 
     //This function reference in animator
-    //private void Restart()
-    //{
-    //    transform.position = checkpointPosition;
-    //    rb.bodyType = RigidbodyType2D.Dynamic;
-    //    animator.Rebind();
-    //    damageable.Health = damageable.MaxHealth;
-    //    playerLive -= 1;
-    //    if (playerLive <= 0 && GameManager.HasInstance)
-    //    {
-    //        GameManager.Instance.PauseGame();
-    //        UIManager.Instance.ActiveLosePanel(true);
-    //    }
-    //}
-
     private void Restart()
     {
         transform.position = checkpointPosition.position;

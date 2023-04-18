@@ -9,6 +9,7 @@ public class GamePanel : MonoBehaviour
     private TextMeshProUGUI numberOfDiamond;
     [SerializeField]
     private TextMeshProUGUI timeText;
+    //[SerializeField] VariableJoystick joystick;
 
     public TextMeshProUGUI NumberOfDiamond => numberOfDiamond;
     private float timeRemaining;
