@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Object
+  - Trap
+  - Collectable
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,15 +17,15 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerHitBox
+  - EnemyHitBox
+  - GroundDetection
+  - SlopeDetection
+  - Health
+  - PostProcessing
+  - Trap
   - 
   - 
   - 
@@ -41,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2421749839
+    locked: 0
+  - name: Saw
+    uniqueID: 1548309691
     locked: 0
   - name: Terrain
     uniqueID: 186731403
