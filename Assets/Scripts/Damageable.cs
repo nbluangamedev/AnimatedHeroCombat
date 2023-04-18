@@ -8,7 +8,7 @@ public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent<int, int> healthChanged;
-    public UnityEvent<int> enemyHealChanged;
+    public UnityEvent<int> enemyKillPoint;
 
     Animator animator;
 
@@ -35,7 +35,6 @@ public class Damageable : MonoBehaviour
             healthChanged?.Invoke(health, MaxHealth);
             if (health <= 0)
             {
-                enemyHealChanged?.Invoke(health);
                 IsAlive = false;
             }
                 
@@ -100,14 +99,25 @@ public class Damageable : MonoBehaviour
     {
         if (IsAlive && !isInvincible)
         {
-            Health -= damage;
+            int actualDamage = 0;
+            int maxDamage = Health - damage;
+            if (maxDamage < 0)
+            {
+                maxDamage = Mathf.Abs(maxDamage);
+                actualDamage = maxDamage;
+                Health = 0;
+            }
+            else
+            {
+                actualDamage = damage;
+                Health -= actualDamage;
+            }
             isInvincible = true;
-
             //Notify other subscribed components that the damageable was hit to handle the knockback and such
             animator.SetTrigger(AnimationStrings.hitTrigger);
             LockVelocity = true;
-            damageableHit?.Invoke(damage, knockback);
-            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+            damageableHit?.Invoke(actualDamage, knockback);
+            CharacterEvents.characterDamaged.Invoke(gameObject, actualDamage);
             return true;
         }
         //Unable to be hit

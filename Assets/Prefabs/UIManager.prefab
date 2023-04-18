@@ -7391,7 +7391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8660f6c14d5895745a0a93c8483dd782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfCherries: {fileID: 8465547172589379856}
+  numberOfDiamond: {fileID: 8465547172589379856}
   timeText: {fileID: 1937297267489765493}
 --- !u!1001 &4767900972455080385
 PrefabInstance:

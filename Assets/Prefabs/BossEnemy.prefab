@@ -176,10 +176,9 @@ GameObject:
   - component: {fileID: 4784994269372029850}
   - component: {fileID: 2111260994366477590}
   - component: {fileID: 1315770169}
-  - component: {fileID: 1036122127}
   m_Layer: 8
   m_Name: BossEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  walkStopRate: 3
+  walkStopRate: 2
   attackZone: {fileID: 1794066750}
   cliffDetectionZone: {fileID: 1655916686}
   hasTarget: 0
@@ -384,27 +383,14 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  enemyHealChanged:
+  enemyKillPoint:
     m_PersistentCalls:
       m_Calls: []
-  maxHealth: 100
-  health: 100
+  maxHealth: 300
+  health: 300
   isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.25
---- !u!114 &1036122127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982036589511727723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4cc12448fd918e4c89a7d6a5370ba9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyDamageable: {fileID: 1315770169}
+  invincibilityTime: 0.5
 --- !u!1 &5610989576779513797
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,5 +466,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 45
   knockback: {x: 5, y: 5}

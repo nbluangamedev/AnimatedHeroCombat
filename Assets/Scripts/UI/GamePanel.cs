@@ -6,22 +6,22 @@ using UnityEngine;
 public class GamePanel : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI numberOfCherries;
+    private TextMeshProUGUI numberOfDiamond;
     [SerializeField]
     private TextMeshProUGUI timeText;
 
-    public TextMeshProUGUI NumberOfCherries => numberOfCherries;
+    public TextMeshProUGUI NumberOfDiamond => numberOfDiamond;
     private float timeRemaining;
     private bool timerIsRunning = false;
 
     private void Awake()
     {
-        SetTimeRemain(120);
+        SetTimeRemain(600);
     }
 
     private void OnEnable()
     {
-        SetTimeRemain(120);
+        SetTimeRemain(600);
         timerIsRunning = true;
         ItemCollector.collectDiamondDelegate += OnPlayerCollect;
     }
@@ -57,7 +57,7 @@ public class GamePanel : MonoBehaviour
 
     private void OnPlayerCollect(int value)
     {
-        numberOfCherries.SetText(value.ToString());
+        numberOfDiamond.SetText(value.ToString());
     }
 
     void DisplayTime(float timeToDisplay)
