@@ -10032,6 +10032,7 @@ GameObject:
   - component: {fileID: 1478313177}
   - component: {fileID: 103169575}
   - component: {fileID: 1319627105493708856}
+  - component: {fileID: 1192514956}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -10298,8 +10299,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04475403, y: -1.286075}
-  m_Size: {x: 0.64191693, y: 1.3742428}
+  m_Offset: {x: 0.06900605, y: -1.286075}
+  m_Size: {x: 0.6589777, y: 1.3742428}
   m_Direction: 0
 --- !u!50 &3614048278003314773
 Rigidbody2D:
@@ -10318,9 +10319,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3362858816758681826
 MonoBehaviour:
@@ -10346,6 +10347,8 @@ MonoBehaviour:
   dustFormationPeriod: 0.15
   fallParticle: {fileID: 1847121918}
   touchParticle: {fileID: 0}
+  noFriction: {fileID: 6200000, guid: 44924c3a4632a2c4ca1a53b19ad2045b, type: 2}
+  fullFriction: {fileID: 6200000, guid: 8dc0973390255b14c8e01d5bc98ec38c, type: 2}
 --- !u!114 &3209019684047394446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10485,9 +10488,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f36bdec2a4d2240b99b7d65004554b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawnPoint: {fileID: 0}
   playerLive: 3
   playerLiveText: {fileID: 0}
+  checkpointPosition: {fileID: 0}
+--- !u!61 &1192514956
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614048278003314778}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.071228206, y: -1.8176363}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9, y: 4}
+    newSize: {x: 9, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6900673, y: 0.29752767}
+  m_EdgeRadius: 0
 --- !u!1 &5729920302582737218
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,26 +7,21 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float runSpeed = 15f;
-    [SerializeField]
-    private float jumpImpulse = 10f;
-    [SerializeField]
-    private float airWalkSpeed = 5f;
+    [SerializeField] float runSpeed = 15f;
+    [SerializeField] float jumpImpulse = 10f;
+    [SerializeField] float airWalkSpeed = 5f;
 
-    [SerializeField]
-    private Vector2 moveInput;
-    [SerializeField] private bool CanDoubleJump;
-    [SerializeField] private TrailRenderer trailRenderer;
+    [SerializeField] Vector2 moveInput;
+    [SerializeField] bool CanDoubleJump;
+    [SerializeField] TrailRenderer trailRenderer;
 
     private bool canDash = true;
     private bool isDashing;
-    [SerializeField]
-    private float dashingPower = 25f;
+    [SerializeField] float dashingPower = 25f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
-    [SerializeField] private ParticleSystem movementParticle;
+    [SerializeField] ParticleSystem movementParticle;
     [Range(0, 10)]
     [SerializeField] int occurAfterVelocity;
     [Range(0, 0.2f)]
@@ -36,12 +31,10 @@ public class PlayerController : MonoBehaviour
     float counter;
 
     [SerializeField] PhysicsMaterial2D noFriction;
-    [SerializeField] PhysicsMaterial2D highFriction;
+    [SerializeField] PhysicsMaterial2D fullFriction;
 
     TouchingDirections touchingDirections;
     Damageable damageable;
-
-    bool isJumping = false;
 
     public float CurrentSpeed
     {
@@ -168,7 +161,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.sharedMaterial = highFriction;
+            rb.sharedMaterial = fullFriction;
         }
     }
 
@@ -290,15 +283,5 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
-    }
-
-    public void SetJump(bool value)
-    {
-        isJumping = value;
-    }
-
-    public void SetDoubleJump(bool value)
-    {
-        CanDoubleJump = !value;
     }
 }

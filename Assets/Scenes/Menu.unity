@@ -549,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988848039245265716, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7988848039245265718, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: howToPlayBtn
@@ -559,6 +559,14 @@ PrefabInstance:
       propertyPath: howToPlayImage
       value: 
       objectReference: {fileID: 1090315419}
+    - target: {fileID: 7988848039770260398, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ac79ae5f0cdfc843815c472e0bc918f, type: 2}
+    - target: {fileID: 7988848039770260398, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3239667748883837316, guid: 1ac79ae5f0cdfc843815c472e0bc918f, type: 2}
     - target: {fileID: 7988848039802942784, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -627,6 +635,10 @@ PrefabInstance:
       propertyPath: settingPanel
       value: 
       objectReference: {fileID: 846420175}
+    - target: {fileID: 7988848041107695209, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 297
+      objectReference: {fileID: 0}
     - target: {fileID: 7988848041199628544, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
