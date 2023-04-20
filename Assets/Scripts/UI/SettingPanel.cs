@@ -15,24 +15,24 @@ public class SettingPanel : MonoBehaviour
 
     private void Awake()
     {
-        if (AudioManager.HasInstance)
-        {
-            bgmValue = AudioManager.Instance.AttachBGMSource.volume;
-            seValue = AudioManager.Instance.AttachSESource.volume;
-            bgmSlider.value = bgmValue;
-            seSlider.value = seValue;
-        }
+        //if (AudioManager.HasInstance)
+        //{
+        //    bgmValue = AudioManager.Instance.AttachBGMSource.volume;
+        //    seValue = AudioManager.Instance.AttachSESource.volume;
+        //    bgmSlider.value = bgmValue;
+        //    seSlider.value = seValue;
+        //}
     }
 
     private void OnEnable()
     {
-        if (AudioManager.HasInstance)
-        {
-            bgmValue = AudioManager.Instance.AttachBGMSource.volume;
-            seValue = AudioManager.Instance.AttachSESource.volume;
-            bgmSlider.value = bgmValue;
-            seSlider.value = seValue;
-        }
+        //if (AudioManager.HasInstance)
+        //{
+        //    bgmValue = AudioManager.Instance.AttachBGMSource.volume;
+        //    seValue = AudioManager.Instance.AttachSESource.volume;
+        //    bgmSlider.value = bgmValue;
+        //    seSlider.value = seValue;
+        //}
     }
 
     public void OnSliderChangeBGMValue(float v)
@@ -63,11 +63,11 @@ public class SettingPanel : MonoBehaviour
 
     public void OnSubmitButtonClick()
     {
-        if (AudioManager.HasInstance)
-        {
-            AudioManager.Instance.ChangeBGMVolume(bgmValue);
-            AudioManager.Instance.ChangeSEVolume(seValue);
-        }
+        //if (AudioManager.HasInstance)
+        //{
+        //    AudioManager.Instance.ChangeBGMVolume(bgmValue);
+        //    AudioManager.Instance.ChangeSEVolume(seValue);
+        //}
 
         if (UIManager.HasInstance)
         {
