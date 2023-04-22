@@ -284,4 +284,13 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    //add animation event
+    private void SoundOnRun()
+    {
+        //if (AudioManager.HasInstance)
+        //{
+        //    AudioManager.Instance.PlaySE(AUDIO.SE_Run);
+        //}
+    }
 }

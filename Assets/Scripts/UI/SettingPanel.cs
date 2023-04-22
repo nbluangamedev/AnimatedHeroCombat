@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class SettingPanel : MonoBehaviour
 {
-    [SerializeField]
-    private Slider bgmSlider;
-    [SerializeField]
-    private Slider seSlider;
+    [SerializeField] Slider bgmSlider;
+    [SerializeField] Slider seSlider;
+    [SerializeField] Toggle bgmMute;
+    [SerializeField] Toggle seMute;
 
     private float bgmValue;
     private float seValue;
+    private bool isBGMMute;
+    private bool isSEMute;
 
     private void Awake()
     {
@@ -21,6 +23,10 @@ public class SettingPanel : MonoBehaviour
         //    seValue = AudioManager.Instance.AttachSESource.volume;
         //    bgmSlider.value = bgmValue;
         //    seSlider.value = seValue;
+        //    isBGMMute = AudioManager.Instance.AttachBGMSource.mute;
+        //    isSEMute = AudioManager.Instance.AttachSESource.mute;
+        //    bgmMute.isOn = isBGMMute;
+        //    seMute.isOn = isSEMute;
         //}
     }
 
@@ -32,6 +38,10 @@ public class SettingPanel : MonoBehaviour
         //    seValue = AudioManager.Instance.AttachSESource.volume;
         //    bgmSlider.value = bgmValue;
         //    seSlider.value = seValue;
+        //    isBGMMute = AudioManager.Instance.AttachBGMSource.mute;
+        //    isSEMute = AudioManager.Instance.AttachSESource.mute;
+        //    bgmMute.isOn = isBGMMute;
+        //    seMute.isOn = isSEMute;
         //}
     }
 
@@ -43,6 +53,16 @@ public class SettingPanel : MonoBehaviour
     public void OnSliderChangeSEValue(float v)
     {
         seValue = v;
+    }
+
+    public void OnChangeValueBGMMute(bool v)
+    {
+        isBGMMute = v;
+    }
+
+    public void OnChangeValueSEMute(bool v)
+    {
+        isSEMute = v;
     }
 
     public void OnCancelButtonClick()
@@ -67,6 +87,8 @@ public class SettingPanel : MonoBehaviour
         //{
         //    AudioManager.Instance.ChangeBGMVolume(bgmValue);
         //    AudioManager.Instance.ChangeSEVolume(seValue);
+        //    AudioManager.Instance.MuteBGM(isBGMMute);
+        //    AudioManager.Instance.MuteSE(isSEMute);
         //}
 
         if (UIManager.HasInstance)

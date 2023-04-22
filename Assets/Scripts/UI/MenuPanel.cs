@@ -31,6 +31,13 @@ public class MenuPanel : MonoBehaviour
             UIManager.Instance.ActiveSettingPanel(true);
         }
     }
+    public void OnQuitButtonClick()
+    {
+        if (GameManager.HasInstance)
+        {
+            GameManager.Instance.EndGame();
+        }
+    }
 
     public void OnHowToPlayButtonClick()
     {
