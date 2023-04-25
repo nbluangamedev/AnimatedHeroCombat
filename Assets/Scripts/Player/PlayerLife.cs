@@ -63,11 +63,12 @@ public class PlayerLife : MonoBehaviour
         //}
         //rb.bodyType = RigidbodyType2D.Static;
         damageable.IsAlive = false;
+        AudioManager.Instance.PlaySE(AUDIO.SE_DEATH);
     }
 
     //This function reference in animator
     private void Restart()
-    {
+    {        
         transform.position = checkpointPosition.position;
         rb.bodyType = RigidbodyType2D.Dynamic;
         animator.Rebind();

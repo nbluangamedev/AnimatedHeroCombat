@@ -20,10 +20,10 @@ public class ItemCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectable"))
         {
-            //if (AudioManager.HasInstance)
-            //{
-            //    AudioManager.Instance.PlaySE(AUDIO.SE_COLLECT);
-            //}
+            if (AudioManager.HasInstance)
+            {
+                AudioManager.Instance.PlaySE(AUDIO.SE_COLLECT_POINT);
+            }
             Destroy(collision.gameObject);
             diamonds++;
             GameManager.Instance.UpdateScores(diamonds);

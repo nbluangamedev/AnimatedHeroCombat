@@ -1,4 +1,30 @@
 ﻿public static class AUDIO
 {
+	  public const string BGM_WARPED_SHOOTING_FX = "warped_shooting_fx";
 	
+	  public const string SE_001_HOVER = "001_Hover";
+	  public const string SE_013_CONFIRM = "013_Confirm";
+	  public const string SE_02_HEAL = "02_Heal";
+	  public const string SE_03_STEP_GRASS_03 = "03_Step_grass_03";
+	  public const string SE_08_BITE = "08_Bite";
+	  public const string SE_08_STEP_ROCK = "08_Step_rock";
+	  public const string SE_08_STEP_ROCK_02 = "08_Step_rock_02";
+	  public const string SE_22_SLASH = "22_Slash";
+	  public const string SE_30_JUMP = "30_Jump";
+	  public const string SE_35_MISS_EVADE = "35_Miss_Evade";
+	  public const string SE_45_LANDING = "45_Landing";
+	  public const string SE_51_FLEE = "51_Flee";
+	  public const string SE_56_ATTACK = "56_Attack";
+	  public const string SE_77_FLESH = "77_flesh";
+	  public const string SE_AFRICAN1 = "African1";
+	  public const string SE_AWP_SWING_AXE = "AWP_Swing_Axe";
+	  public const string SE_BATTLEAXE = "Battleaxe";
+	  public const string SE_BUOCHAN = "buochan";
+	  public const string SE_COFFEE2 = "Coffee2";
+	  public const string SE_COLLECT_POINT = "Collect_Point";
+	  public const string SE_DEATH = "Death";
+	  public const string SE_MINIMALIST6 = "Minimalist6";
+	  public const string SE_SPELLATTACK = "SpellAttack";
+	  public const string SE_WOODBLOCK1 = "WoodBlock1";
+	  public const string SE_WOODBLOCK2 = "WoodBlock2";
 }

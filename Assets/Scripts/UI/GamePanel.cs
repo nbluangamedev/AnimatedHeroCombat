@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class GamePanel : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI numberOfDiamond;
-    [SerializeField]
-    private TextMeshProUGUI timeText;
+    [SerializeField] TextMeshProUGUI numberOfDiamond;
+    [SerializeField] TextMeshProUGUI timeText;
     //[SerializeField] VariableJoystick joystick;
 
     public TextMeshProUGUI NumberOfDiamond => numberOfDiamond;

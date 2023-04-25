@@ -51,6 +51,7 @@ public class UIManager : BaseManager<UIManager>
             {
                 GameManager.Instance.PauseGame();
                 ActivePausePanel(true);
+                AudioManager.Instance.PlaySE(AUDIO.SE_013_CONFIRM);
             }
         }
     }

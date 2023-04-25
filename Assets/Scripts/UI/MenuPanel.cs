@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class MenuPanel : MonoBehaviour
 {
-    [SerializeField]
-    GameObject howToPlayBtn;
+    [SerializeField] GameObject howToPlayBtn;
 
-    [SerializeField]
-    GameObject howToPlayImage;
+    [SerializeField] GameObject howToPlayImage;
 
     public void OnStartButtonClick()
     {
@@ -20,7 +18,7 @@ public class MenuPanel : MonoBehaviour
 
         if (AudioManager.HasInstance)
         {
-            //AudioManager.Instance.PlayBGM(AUDIO.BGM_BGM_02, 0.5f);
+            AudioManager.Instance.PlayBGM(AUDIO.BGM_WARPED_SHOOTING_FX, 0.5f);
         }
     }
 

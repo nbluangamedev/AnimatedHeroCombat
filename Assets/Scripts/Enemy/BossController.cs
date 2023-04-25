@@ -95,7 +95,7 @@ public class BossController : MonoBehaviour
     void Update()
     {
         HasTarget = attackZone.detectedColliders.Count > 0;
-        if(AttackCooldown > 0)
+        if (AttackCooldown > 0)
         {
             AttackCooldown -= Time.deltaTime;
         }
@@ -110,7 +110,7 @@ public class BossController : MonoBehaviour
 
         if (!damageable.LockVelocity)
         {
-            if (CanMove)
+            if (CanMove && touchingDirections.IsGrounded)
                 rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
             else rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y);
         }
@@ -139,7 +139,7 @@ public class BossController : MonoBehaviour
 
     public void OnCliffDetected()
     {
-        if(touchingDirections.IsGrounded)
+        if (touchingDirections.IsGrounded)
         {
             FlipDirection();
         }

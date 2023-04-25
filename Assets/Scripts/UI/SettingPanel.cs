@@ -17,32 +17,32 @@ public class SettingPanel : MonoBehaviour
 
     private void Awake()
     {
-        //if (AudioManager.HasInstance)
-        //{
-        //    bgmValue = AudioManager.Instance.AttachBGMSource.volume;
-        //    seValue = AudioManager.Instance.AttachSESource.volume;
-        //    bgmSlider.value = bgmValue;
-        //    seSlider.value = seValue;
-        //    isBGMMute = AudioManager.Instance.AttachBGMSource.mute;
-        //    isSEMute = AudioManager.Instance.AttachSESource.mute;
-        //    bgmMute.isOn = isBGMMute;
-        //    seMute.isOn = isSEMute;
-        //}
+        if (AudioManager.HasInstance)
+        {
+            bgmValue = AudioManager.Instance.AttachBGMSource.volume;
+            seValue = AudioManager.Instance.AttachSESource.volume;
+            bgmSlider.value = bgmValue;
+            seSlider.value = seValue;
+            isBGMMute = AudioManager.Instance.AttachBGMSource.mute;
+            isSEMute = AudioManager.Instance.AttachSESource.mute;
+            bgmMute.isOn = isBGMMute;
+            seMute.isOn = isSEMute;
+        }
     }
 
     private void OnEnable()
     {
-        //if (AudioManager.HasInstance)
-        //{
-        //    bgmValue = AudioManager.Instance.AttachBGMSource.volume;
-        //    seValue = AudioManager.Instance.AttachSESource.volume;
-        //    bgmSlider.value = bgmValue;
-        //    seSlider.value = seValue;
-        //    isBGMMute = AudioManager.Instance.AttachBGMSource.mute;
-        //    isSEMute = AudioManager.Instance.AttachSESource.mute;
-        //    bgmMute.isOn = isBGMMute;
-        //    seMute.isOn = isSEMute;
-        //}
+        if (AudioManager.HasInstance)
+        {
+            bgmValue = AudioManager.Instance.AttachBGMSource.volume;
+            seValue = AudioManager.Instance.AttachSESource.volume;
+            bgmSlider.value = bgmValue;
+            seSlider.value = seValue;
+            isBGMMute = AudioManager.Instance.AttachBGMSource.mute;
+            isSEMute = AudioManager.Instance.AttachSESource.mute;
+            bgmMute.isOn = isBGMMute;
+            seMute.isOn = isSEMute;
+        }
     }
 
     public void OnSliderChangeBGMValue(float v)
@@ -83,13 +83,13 @@ public class SettingPanel : MonoBehaviour
 
     public void OnSubmitButtonClick()
     {
-        //if (AudioManager.HasInstance)
-        //{
-        //    AudioManager.Instance.ChangeBGMVolume(bgmValue);
-        //    AudioManager.Instance.ChangeSEVolume(seValue);
-        //    AudioManager.Instance.MuteBGM(isBGMMute);
-        //    AudioManager.Instance.MuteSE(isSEMute);
-        //}
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.ChangeBGMVolume(bgmValue);
+            AudioManager.Instance.ChangeSEVolume(seValue);
+            AudioManager.Instance.MuteBGM(isBGMMute);
+            AudioManager.Instance.MuteSE(isSEMute);
+        }
 
         if (UIManager.HasInstance)
         {

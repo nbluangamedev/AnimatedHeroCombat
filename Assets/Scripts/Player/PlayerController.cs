@@ -122,13 +122,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //public bool CanAttack
-    //{
-    //    get
-    //    {
-    //        return animator.GetBool(AnimationStrings.canAttack);
-    //    }
-    //}
+    public bool CanAttack
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canAttack);
+        }
+    }
 
     public bool IsAlive
     {
@@ -222,6 +222,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
                 CanDoubleJump = true;
+                AudioManager.Instance.PlaySE(AUDIO.SE_30_JUMP);
             }
             else if (CanDoubleJump)
             {
@@ -229,6 +230,7 @@ public class PlayerController : MonoBehaviour
                 fallParticle.Play();
                 CanDoubleJump = !CanDoubleJump;
                 animator.SetTrigger(AnimationStrings.rollingTrigger);
+                AudioManager.Instance.PlaySE(AUDIO.SE_35_MISS_EVADE);
             }
         }
     }
@@ -237,8 +239,10 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            //if (CanAttack)
-            animator.SetTrigger(AnimationStrings.attackTrigger);
+            if (CanAttack)
+            {
+                animator.SetTrigger(AnimationStrings.attackTrigger);
+            }
         }
     }
 
@@ -246,8 +250,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            //if (CanAttack)
-            animator.SetTrigger(AnimationStrings.spellAttackTrigger);
+            if (CanAttack && touchingDirections.IsGrounded)
+            {
+                animator.SetTrigger(AnimationStrings.spellAttackTrigger);
+                AudioManager.Instance.PlaySE(AUDIO.SE_SPELLATTACK, 0.4f);
+            }
         }
     }
 
@@ -266,6 +273,7 @@ public class PlayerController : MonoBehaviour
         if (context.started && canDash)
         {
             StartCoroutine(Dash());
+            AudioManager.Instance.PlaySE(AUDIO.SE_22_SLASH);
         }
     }
 
@@ -288,9 +296,9 @@ public class PlayerController : MonoBehaviour
     //add animation event
     private void SoundOnRun()
     {
-        //if (AudioManager.HasInstance)
-        //{
-        //    AudioManager.Instance.PlaySE(AUDIO.SE_Run);
-        //}
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlaySE(AUDIO.SE_08_STEP_ROCK_02);
+        }
     }
 }

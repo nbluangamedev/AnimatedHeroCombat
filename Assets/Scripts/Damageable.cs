@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
+//using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -118,7 +118,8 @@ public class Damageable : MonoBehaviour
             LockVelocity = true;
             damageableHit?.Invoke(actualDamage, knockback);
             CharacterEvents.characterDamaged.Invoke(gameObject, actualDamage);
-            return true;
+            AudioManager.Instance.PlaySE(AUDIO.SE_56_ATTACK);
+            return true;            
         }
         //Unable to be hit
         return false;
@@ -132,6 +133,7 @@ public class Damageable : MonoBehaviour
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
             CharacterEvents.characterHealed.Invoke(gameObject, actualHeal);
+            AudioManager.Instance.PlaySE(AUDIO.SE_02_HEAL);
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Trap
   - Collectable
   - Enemy
+  - BossEnemy
   layers:
   - Default
   - TransparentFX
