@@ -30,11 +30,22 @@ public class EnemySpawn : MonoBehaviour
         if (!enemyList.Any())
         {
             ActiveBoss(true);
+            enemyList.Clear();
+            if (bossEnemy != null)
+            {
+                return;
+            }
+            Destroy(bossEnemy);            
         }
     }
 
     public void ActiveBoss(bool active)
     {
         bossEnemy.SetActive(active);
+        if (bossEnemy != null)
+        {
+            return;
+        }
+        Destroy(bossEnemy);
     }
 }

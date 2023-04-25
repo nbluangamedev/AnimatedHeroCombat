@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    //[SerializeField] private float rotateSpeed = 2f;
+    [SerializeField] private float rotateSpeed = 2f;
 
     [SerializeField]
     private float movingSpeed = 2f;
@@ -14,7 +14,7 @@ public class SawRotation : MonoBehaviour
 
     void Update()
     {
-        //transform.Rotate(0, 0, 360 * rotateSpeed * Time.deltaTime);
+        transform.Rotate(0, 0, 360 * rotateSpeed * Time.deltaTime);
 
         if (Vector2.Distance(Waypoints[curWaypointIndex].transform.position, transform.position) < 0.1f)
         {

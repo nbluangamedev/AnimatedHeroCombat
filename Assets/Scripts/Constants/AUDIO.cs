@@ -1,5 +1,7 @@
 ﻿public static class AUDIO
 {
+	  public const string BGM_GOOD_DAY_SO_FAR_PERCUSSION = "Good_Day_So_Far_Percussion";
+	  public const string BGM_TIME_TO_GET_SERIOUS_PERCUSSION = "Time_To_Get_Serious_Percussion";
 	  public const string BGM_WARPED_SHOOTING_FX = "warped_shooting_fx";
 	
 	  public const string SE_001_HOVER = "001_Hover";
