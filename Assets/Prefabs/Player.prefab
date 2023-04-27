@@ -10010,7 +10010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 25
+  attackDamage: 30
   knockback: {x: 0, y: 0}
 --- !u!1 &3614048278003314778
 GameObject:
@@ -10608,7 +10608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 35
+  attackDamage: 40
   knockback: {x: 1, y: 0}
 --- !u!1 &6185510316587325621
 GameObject:
@@ -10699,8 +10699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 60
-  knockback: {x: 4, y: 2}
+  attackDamage: 100
+  knockback: {x: 4, y: 3}
 --- !u!1 &6235960731353282098
 GameObject:
   m_ObjectHideFlags: 0
@@ -10790,7 +10790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 45
+  attackDamage: 50
   knockback: {x: 3, y: 0}
 --- !u!1 &7401555583736302764
 GameObject:
@@ -10816,7 +10816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401555583736302764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.72, y: -1.04, z: 0}
+  m_LocalPosition: {x: 1.3, y: -1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3614048278003314769}
@@ -10911,5 +10911,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 35
+  attackDamage: 40
   knockback: {x: 2, y: 0}

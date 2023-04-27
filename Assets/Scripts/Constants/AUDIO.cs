@@ -20,6 +20,7 @@
 	  public const string SE_35_MISS_EVADE = "35_Miss_Evade";
 	  public const string SE_45_LANDING = "45_Landing";
 	  public const string SE_51_FLEE = "51_Flee";
+	  public const string SE_55_ENCOUNTER_02 = "55_Encounter_02";
 	  public const string SE_56_ATTACK = "56_Attack";
 	  public const string SE_61_HIT_03 = "61_Hit_03";
 	  public const string SE_77_FLESH = "77_flesh";

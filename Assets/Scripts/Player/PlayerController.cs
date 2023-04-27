@@ -174,6 +174,7 @@ public class PlayerController : MonoBehaviour
 
         if (!damageable.LockVelocity)
         {
+            Debug.Log(CurrentSpeed);
             rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
         }
 

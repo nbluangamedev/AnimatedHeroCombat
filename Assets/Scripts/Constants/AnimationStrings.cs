@@ -22,4 +22,5 @@ internal class AnimationStrings
     internal static string attackCooldown = "attackCooldown";
     internal static string spellAttackTrigger = "spellAttack";
     internal static string rollingTrigger = "isRolling";
+    internal static string buttonClickTrigger = "buttonClick";
 }

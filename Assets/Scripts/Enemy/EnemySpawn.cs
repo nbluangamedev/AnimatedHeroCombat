@@ -14,33 +14,27 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        if (count > 3)
-        {
-            return;
-        }
-        else
-        {
-            CheckEnemy();
-        }
+        CheckEnemy();
     }
 
     private void CheckEnemy()
     {
-        if (enemyList.Any())
+        for (int i = 0; i < enemyList.Count; i++)
         {
-            foreach (var enemy in enemyList)
+            var enemy = enemyList[i].GetComponent<Damageable>();
+            if( enemy != null )
             {
-                if (enemy == null)
+                if(enemy.Health == 0)
                 {
-                    enemyList.Remove(enemy);
                     count++;
+                    Debug.Log("count: "+count);
                 }
             }
         }
-        else
+
+        if (count == enemyList.Count)
         {
             bossEnemy.SetActive(true);
-            count++;
         }
     }
 }

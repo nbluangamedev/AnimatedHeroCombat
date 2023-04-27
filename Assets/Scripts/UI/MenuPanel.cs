@@ -18,7 +18,8 @@ public class MenuPanel : MonoBehaviour
 
         if (AudioManager.HasInstance)
         {
-            AudioManager.Instance.PlayBGM(AUDIO.BGM_WARPED_SHOOTING_FX, 0.5f);
+            AudioManager.Instance.FadeOutBGM(1f);
+            AudioManager.Instance.PlayBGM(AUDIO.BGM_GOOD_DAY_SO_FAR_PERCUSSION);
         }
     }
 

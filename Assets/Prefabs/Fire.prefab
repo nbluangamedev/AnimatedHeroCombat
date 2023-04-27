@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996526974d5b67d40be4802454d0c126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 50
   moveSpeed: {x: 30, y: 0}
   knockback: {x: 5, y: 0}
 --- !u!50 &2626482106736406711
