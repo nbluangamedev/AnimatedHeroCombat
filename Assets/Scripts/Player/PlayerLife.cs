@@ -26,7 +26,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
@@ -57,18 +57,17 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
-        //if (AudioManager.HasInstance)
-        //{
-        //    AudioManager.Instance.PlaySE(AUDIO.SE_DEATH);
-        //}
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlaySE(AUDIO.SE_DEATH);
+        }
         //rb.bodyType = RigidbodyType2D.Static;
         damageable.IsAlive = false;
-        AudioManager.Instance.PlaySE(AUDIO.SE_DEATH);
     }
 
     //This function reference in animator
     private void Restart()
-    {        
+    {
         transform.position = checkpointPosition.position;
         rb.bodyType = RigidbodyType2D.Dynamic;
         animator.Rebind();

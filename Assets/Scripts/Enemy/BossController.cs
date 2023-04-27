@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class BossController : MonoBehaviour
 {
+    [SerializeField] GameObject finishFlag;
     [SerializeField]
     private float walkSpeed = 5f;
     public float walkStopRate = 0.1f;
@@ -143,5 +144,10 @@ public class BossController : MonoBehaviour
         {
             FlipDirection();
         }
+    }
+
+    private void FlagSpawn()
+    {
+        finishFlag.SetActive(true);
     }
 }

@@ -118,7 +118,7 @@ public class Damageable : MonoBehaviour
             LockVelocity = true;
             damageableHit?.Invoke(actualDamage, knockback);
             CharacterEvents.characterDamaged.Invoke(gameObject, actualDamage);
-            AudioManager.Instance.PlaySE(AUDIO.SE_56_ATTACK);
+            AudioManager.Instance.PlaySE(AUDIO.SE_61_HIT_03);
             return true;            
         }
         //Unable to be hit

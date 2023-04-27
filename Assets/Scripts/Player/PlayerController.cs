@@ -242,6 +242,7 @@ public class PlayerController : MonoBehaviour
             if (CanAttack)
             {
                 animator.SetTrigger(AnimationStrings.attackTrigger);
+                //AudioManager.Instance.PlaySE(AUDIO.SE_BATTLEAXE, 0.5f);
             }
         }
     }
@@ -299,6 +300,14 @@ public class PlayerController : MonoBehaviour
         if (AudioManager.HasInstance)
         {
             AudioManager.Instance.PlaySE(AUDIO.SE_08_STEP_ROCK_02);
+        }
+    }
+
+    private void SoundOnFire()
+    {
+        if (AudioManager.HasInstance)
+        {
+            AudioManager.Instance.PlaySE(AUDIO.SE_18_THUNDER_02);
         }
     }
 }
