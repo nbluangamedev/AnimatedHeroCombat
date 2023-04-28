@@ -10,6 +10,7 @@ public class PausePanel : MonoBehaviour
         {
             GameManager.Instance.ResumeGame();
             UIManager.Instance.ActivePausePanel(false);
+            UIManager.Instance.ActiveShowOnMobilePanel(true);
         }
     }
 

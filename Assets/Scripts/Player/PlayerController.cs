@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float runSpeed = 15f;
+    public float runSpeed = 15f;
     [SerializeField] float jumpImpulse = 10f;
     [SerializeField] float airWalkSpeed = 5f;
 
@@ -174,7 +174,6 @@ public class PlayerController : MonoBehaviour
 
         if (!damageable.LockVelocity)
         {
-            Debug.Log(CurrentSpeed);
             rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
         }
 

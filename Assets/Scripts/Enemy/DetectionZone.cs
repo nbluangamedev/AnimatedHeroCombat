@@ -9,12 +9,13 @@ public class DetectionZone : MonoBehaviour
 
     public List<Collider2D> detectedColliders= new List<Collider2D>();
 
-    Collider2D col;
+    //Collider2D col;
 
-    private void Awake()
-    {
-        col = GetComponent<Collider2D>();
-    }
+    //private void Awake()
+    //{
+    //    //col = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Collider2D>();
+    //    col = GetComponent<Collider2D>();
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

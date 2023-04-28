@@ -28,6 +28,7 @@ public class FinishFlag : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 UIManager.Instance.ActiveVictoryPanel(true);
+                UIManager.Instance.ActiveShowOnMobilePanel(false);
                 return;
             }
         }

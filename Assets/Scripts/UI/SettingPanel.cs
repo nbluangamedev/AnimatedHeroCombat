@@ -67,7 +67,11 @@ public class SettingPanel : MonoBehaviour
 
     public void OnCancelButtonClick()
     {
-        if (UIManager.HasInstance)
+        if (UIManager.HasInstance && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
+        {
+            UIManager.Instance.ActiveSettingPanel(false);
+            UIManager.Instance.ActiveShowOnMobilePanel(true);
+        }else
         {
             UIManager.Instance.ActiveSettingPanel(false);
         }
@@ -77,6 +81,7 @@ public class SettingPanel : MonoBehaviour
             if (GameManager.Instance.IsPlaying == false && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
             {
                 UIManager.Instance.ActivePausePanel(true);
+                UIManager.Instance.ActiveShowOnMobilePanel(false);
             }
         }
     }
@@ -91,7 +96,12 @@ public class SettingPanel : MonoBehaviour
             AudioManager.Instance.MuteSE(isSEMute);
         }
 
-        if (UIManager.HasInstance)
+        if (UIManager.HasInstance && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
+        {
+            UIManager.Instance.ActiveSettingPanel(false);
+            UIManager.Instance.ActiveShowOnMobilePanel(true);
+        }
+        else
         {
             UIManager.Instance.ActiveSettingPanel(false);
         }
@@ -101,6 +111,7 @@ public class SettingPanel : MonoBehaviour
             if (GameManager.Instance.IsPlaying == false && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
             {
                 UIManager.Instance.ActivePausePanel(true);
+                UIManager.Instance.ActiveShowOnMobilePanel(false);
             }
         }
     }
