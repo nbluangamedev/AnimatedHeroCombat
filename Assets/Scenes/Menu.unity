@@ -513,17 +513,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 797853953, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: joyStick
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1923651612, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 62.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: -942
       objectReference: {fileID: 0}
     - target: {fileID: 1923651613, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 165
+      value: -358
       objectReference: {fileID: 0}
     - target: {fileID: 532877988703177614, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_Pivot.x
@@ -591,7 +623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6857540805862647864, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7034595707390004599, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
@@ -599,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076421662124499795, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7988848040535237824, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_RootOrder
@@ -652,6 +684,30 @@ PrefabInstance:
     - target: {fileID: 8258770578061244443, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_ControlPath
       value: <Gamepad>/dpad/right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915441703809219567, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 010a6e5305fa7004f89c5d317b7b47d4, type: 3}
+    - target: {fileID: 8915441703809219600, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 82.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915441703809219600, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 81.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915441703809219600, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915441703809219600, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915441703809219600, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}

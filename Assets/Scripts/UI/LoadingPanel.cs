@@ -36,7 +36,6 @@ public class LoadingPanel : MonoBehaviour
                     {
                         UIManager.Instance.ActiveGamePanel(true);
                         UIManager.Instance.ActiveLoadingPanel(false);
-                        UIManager.Instance.ActiveShowOnMobilePanel(true);
                     }
                     if (GameManager.HasInstance)
                     {

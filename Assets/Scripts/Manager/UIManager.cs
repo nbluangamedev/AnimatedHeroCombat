@@ -32,10 +32,6 @@ public class UIManager : BaseManager<UIManager>
     private LoadingPanel loadingPanel;
     public LoadingPanel LoadingPanel => loadingPanel;
 
-    [SerializeField]
-    private ShowOnMobile showOnMobiePanel;
-    public ShowOnMobile ShowOnMobilePanel => showOnMobiePanel;
-
     private void Start()
     {
         ActiveMenuPanel(true);
@@ -45,7 +41,6 @@ public class UIManager : BaseManager<UIManager>
         ActiveVictoryPanel(false);
         ActiveLosePanel(false);
         ActiveLoadingPanel(false);
-        ActiveShowOnMobilePanel(false);
     }
 
     private void Update()
@@ -56,7 +51,6 @@ public class UIManager : BaseManager<UIManager>
             {
                 GameManager.Instance.PauseGame();
                 ActivePausePanel(true);
-                ActiveShowOnMobilePanel(false);
                 AudioManager.Instance.PlaySE(AUDIO.SE_013_CONFIRM);
             }
         }
@@ -95,10 +89,5 @@ public class UIManager : BaseManager<UIManager>
     public void ActiveLoadingPanel(bool active)
     {
         loadingPanel.gameObject.SetActive(active);
-    }
-
-    public void ActiveShowOnMobilePanel(bool active)
-    {
-        showOnMobiePanel.gameObject.SetActive(active);
     }
 }

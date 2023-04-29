@@ -242,7 +242,6 @@ public class PlayerController : MonoBehaviour
             if (CanAttack)
             {
                 animator.SetTrigger(AnimationStrings.attackTrigger);
-                //AudioManager.Instance.PlaySE(AUDIO.SE_BATTLEAXE, 0.5f);
             }
         }
     }

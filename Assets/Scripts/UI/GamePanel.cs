@@ -49,7 +49,6 @@ public class GamePanel : MonoBehaviour
                     //AudioManager.Instance.PlaySE(AUDIO.SE_LOSE);
                     GameManager.Instance.PauseGame();
                     UIManager.Instance.ActiveLosePanel(true);
-                    UIManager.Instance.ActiveShowOnMobilePanel(false);
                 }
             }
         }
