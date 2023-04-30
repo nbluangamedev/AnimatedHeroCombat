@@ -7,7 +7,6 @@ using UnityEngine.SocialPlatforms.Impl;
 public class EnemyDamageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> enemyDamageableHit;
-    //public UnityEvent<int> enemyKillPoint;
 
     Animator animator;
 
@@ -72,19 +71,9 @@ public class EnemyDamageable : MonoBehaviour
         }
     }
 
-    public int enemyKillScore = 5;
-    public int bossKillScore = 10;
-    public int demonKillScore = 20;
-    private int currentScore;
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
-
-        if (GameManager.HasInstance)
-        {
-            currentScore = GameManager.Instance.Scores;
-        }
     }
 
     private void Update()
@@ -114,14 +103,6 @@ public class EnemyDamageable : MonoBehaviour
                 maxDamage = Mathf.Abs(maxDamage);
                 actualDamage = maxDamage;
                 Health = 0;                
-                if (GameManager.HasInstance)
-                {
-                    GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-                    if(enemy != null) 
-                    {
-                        GameManager.Instance.UpdateScores(currentScore + enemyKillScore);
-                    }
-                }
             }
             else
             {

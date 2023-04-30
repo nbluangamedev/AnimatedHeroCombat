@@ -24,6 +24,10 @@ public class Checkpoint : MonoBehaviour
             playerLife.UpdateCheckpoint(spawnPoint);
             spriteRenderer.sprite = active;
             coll.enabled = false;
+            if(AudioManager.HasInstance)
+            {
+                AudioManager.Instance.PlaySE(AUDIO.SE_013_CONFIRM);
+            }
         }
     }
 }

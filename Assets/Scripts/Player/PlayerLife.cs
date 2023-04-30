@@ -77,6 +77,7 @@ public class PlayerLife : MonoBehaviour
             {
                 GameManager.Instance.PauseGame();
                 UIManager.Instance.ActiveLosePanel(true);
+                AudioManager.Instance.PlaySE(AUDIO.SE_55_ENCOUNTER_02);
             }
         }
     }

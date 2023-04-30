@@ -15,9 +15,11 @@
 	  public const string SE_18_THUNDER_02 = "18_Thunder_02";
 	  public const string SE_22_SLASH = "22_Slash";
 	  public const string SE_25_WIND_01 = "25_Wind_01";
+	  public const string SE_30_EARTH = "30_Earth";
 	  public const string SE_30_EARTH_02 = "30_Earth_02";
 	  public const string SE_30_JUMP = "30_Jump";
 	  public const string SE_35_MISS_EVADE = "35_Miss_Evade";
+	  public const string SE_39_ABSORB_04 = "39_Absorb_04";
 	  public const string SE_45_LANDING = "45_Landing";
 	  public const string SE_51_FLEE = "51_Flee";
 	  public const string SE_55_ENCOUNTER_02 = "55_Encounter_02";
@@ -27,12 +29,18 @@
 	  public const string SE_AFRICAN1 = "African1";
 	  public const string SE_AWP_SWING_AXE = "AWP_Swing_Axe";
 	  public const string SE_BATTLEAXE = "Battleaxe";
+	  public const string SE_BATTLEAXE5 = "Battleaxe5";
+	  public const string SE_BOW1 = "Bow1";
+	  public const string SE_BOW9 = "Bow9";
+	  public const string SE_BOWFLESH2 = "BowFlesh2";
 	  public const string SE_BUOCHAN = "buochan";
 	  public const string SE_COFFEE2 = "Coffee2";
 	  public const string SE_COLLECT_POINT = "Collect_Point";
 	  public const string SE_DEATH = "Death";
 	  public const string SE_MINIMALIST6 = "Minimalist6";
 	  public const string SE_SPELLATTACK = "SpellAttack";
+	  public const string SE_SWORD_05 = "SWORD_05";
+	  public const string SE_SWORD_09 = "SWORD_09";
 	  public const string SE_WOODBLOCK1 = "WoodBlock1";
 	  public const string SE_WOODBLOCK2 = "WoodBlock2";
 }

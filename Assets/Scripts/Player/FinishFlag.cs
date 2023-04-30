@@ -13,7 +13,7 @@ public class FinishFlag : MonoBehaviour
         {
             if (AudioManager.HasInstance)
             {
-                AudioManager.Instance.PlaySE(AUDIO.SE_25_WIND_01);
+                AudioManager.Instance.PlaySE(AUDIO.SE_39_ABSORB_04);
             }
             levelComplete = true;
             Invoke("CompleteLevel", 1f);
@@ -28,6 +28,7 @@ public class FinishFlag : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 UIManager.Instance.ActiveVictoryPanel(true);
+                AudioManager.Instance.PlaySE(AUDIO.SE_39_ABSORB_04);
                 return;
             }
         }

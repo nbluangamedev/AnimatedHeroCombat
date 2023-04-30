@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
         if(damageable != null)
         {
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
-            damageable.Hit(attackDamage, deliveredKnockback);
+            damageable.Hit(attackDamage, deliveredKnockback);            
         }
     }
 }

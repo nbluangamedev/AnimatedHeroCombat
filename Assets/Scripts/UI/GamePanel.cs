@@ -53,7 +53,7 @@ public class GamePanel : MonoBehaviour
                 timerIsRunning = false;
                 if (UIManager.HasInstance && GameManager.HasInstance && AudioManager.HasInstance)
                 {
-                    //AudioManager.Instance.PlaySE(AUDIO.SE_LOSE);
+                    AudioManager.Instance.PlaySE(AUDIO.SE_55_ENCOUNTER_02);
                     GameManager.Instance.PauseGame();
                     UIManager.Instance.ActiveLosePanel(true);
                 }
