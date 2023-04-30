@@ -102,7 +102,7 @@ public class EnemyDamageable : MonoBehaviour
             {
                 maxDamage = Mathf.Abs(maxDamage);
                 actualDamage = maxDamage;
-                Health = 0;                
+                Health = 0;               
             }
             else
             {

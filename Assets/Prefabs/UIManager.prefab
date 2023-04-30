@@ -9191,6 +9191,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6254191234978839890, guid: c5b477a21c9fee8488ebf2011f3d1e04, type: 3}
+      propertyPath: m_text
+      value: 'MP: 50 / 100'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254191234978839890, guid: c5b477a21c9fee8488ebf2011f3d1e04, type: 3}
       propertyPath: m_fontSize
       value: 50
       objectReference: {fileID: 0}

@@ -10,7 +10,7 @@ public class GamePanel : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     //[SerializeField] VariableJoystick joystick;
 
-
+    GameObject enemy;
 
     public TextMeshProUGUI NumberOfDiamond => numberOfDiamond;
     private float timeRemaining;
@@ -21,6 +21,7 @@ public class GamePanel : MonoBehaviour
         if (GameManager.HasInstance)
         {
             numberOfLife.text = "Live: " + GameManager.Instance.PlayerLife;
+            enemy = GameObject.FindGameObjectWithTag("Enemy");
         }
         SetTimeRemain(600);
     }
@@ -70,7 +71,7 @@ public class GamePanel : MonoBehaviour
     {
         numberOfDiamond.SetText(value.ToString());
     }
-
+    
     void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;

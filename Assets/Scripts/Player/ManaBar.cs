@@ -18,7 +18,7 @@ public class ManaBar : MonoBehaviour
         if (GameManager.HasInstance)
         {
             manaBar.value = CalculateSliderPercentage(GameManager.Instance.Mana, GameManager.Instance.MaxMana);
-            manaBarText.text = "HP " + GameManager.Instance.Mana + " / " + GameManager.Instance.MaxMana;
+            manaBarText.text = "MP: " + GameManager.Instance.Mana + " / " + GameManager.Instance.MaxMana;
         }
     }
 
@@ -63,6 +63,6 @@ public class ManaBar : MonoBehaviour
     private void OnPlayerManaChanged(float newMana, float maxMana)
     {
         manaBar.value = CalculateSliderPercentage(newMana, maxMana);
-        manaBarText.text = "HP " + Mathf.FloorToInt(newMana) + " / " + maxMana;
+        manaBarText.text = "MP: " + Mathf.FloorToInt(newMana) + " / " + maxMana;
     }
 }

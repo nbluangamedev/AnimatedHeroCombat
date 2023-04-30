@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour
         if (GameManager.HasInstance)
         {
             healthBar.value = CalculateSliderPercentage(GameManager.Instance.Health, GameManager.Instance.MaxHealth);
-            healthBarText.text = "HP " + GameManager.Instance.Health + " / " + GameManager.Instance.MaxHealth;
+            healthBarText.text = "HP: " + GameManager.Instance.Health + " / " + GameManager.Instance.MaxHealth;
         }
     }
 
@@ -42,6 +42,6 @@ public class HealthBar : MonoBehaviour
     private void OnPlayerHealthChanged(int newHealth, int maxHealth)
     {
         healthBar.value = CalculateSliderPercentage(newHealth, maxHealth);
-        healthBarText.text = "HP " + newHealth + " / " + maxHealth;
+        healthBarText.text = "HP: " + newHealth + " / " + maxHealth;
     }
 }

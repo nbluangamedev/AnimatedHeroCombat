@@ -70,6 +70,7 @@ public class PlayerLife : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Dynamic;
             animator.Rebind();
             GameManager.Instance.Health = GameManager.Instance.MaxHealth;
+            GameManager.Instance.Mana = GameManager.Instance.MaxMana;
             playerLive -= 1;
             GameManager.Instance.UpdatePlayerLife(playerLive);
 

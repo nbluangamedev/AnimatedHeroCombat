@@ -12,6 +12,7 @@ public class GameManager : BaseManager<GameManager>
 {
     public UnityEvent<int, int> healthChanged;
     public UnityEvent<float, float> manaChanged;
+    //public UnityEvent<int> enemyScore;
 
     private int maxHealth = 200;
     public int MaxHealth => maxHealth;
@@ -52,6 +53,7 @@ public class GameManager : BaseManager<GameManager>
 
     private int scores = 0;
     public int Scores => scores;
+
 
     private bool isPlaying = false;
     public bool IsPlaying => isPlaying;

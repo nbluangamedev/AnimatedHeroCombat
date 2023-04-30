@@ -21,6 +21,12 @@ public class MenuPanel : MonoBehaviour
             AudioManager.Instance.FadeOutBGM(1f);
             AudioManager.Instance.PlayBGM(AUDIO.BGM_GOOD_DAY_SO_FAR_PERCUSSION);
         }
+        
+        if(GameManager.HasInstance)
+        {
+            GameManager.Instance.UpdateScores(0);
+            GameManager.Instance.UpdatePlayerLife(3);
+        }
     }
 
     public void OnSettingButtonClick()
