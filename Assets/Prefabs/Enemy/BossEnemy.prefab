@@ -175,14 +175,14 @@ GameObject:
   - component: {fileID: 5402385154105822363}
   - component: {fileID: 4784994269372029850}
   - component: {fileID: 2111260994366477590}
-  - component: {fileID: 1315770169}
+  - component: {fileID: 9176020079392565731}
   m_Layer: 8
   m_Name: BossEnemy
   m_TagString: BossEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4982036589511727727
 Transform:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1315770169
+--- !u!114 &9176020079392565731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,10 +363,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982036589511727723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc9486ef50398f4ba0f3cf4d51bd93b, type: 3}
+  m_Script: {fileID: 11500000, guid: bef2a4857fc616e4b9b7efa867bad282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageableHit:
+  enemyDamageableHit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5402385154105822363}
@@ -381,9 +381,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   enemyKillPoint:
     m_PersistentCalls:
       m_Calls: []
@@ -391,7 +388,7 @@ MonoBehaviour:
   health: 300
   isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.5
+  invincibilityTime: 0.25
 --- !u!1 &5610989576779513797
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6910901726747184897}
   - component: {fileID: 8713936047439557861}
-  - component: {fileID: 1325609225}
+  - component: {fileID: 658673917623964183}
   m_Layer: 10
   m_Name: PunchAttack
   m_TagString: Untagged
@@ -455,7 +452,7 @@ PolygonCollider2D:
       - {x: 0.398735, y: -0.3640415}
       - {x: 1.4706845, y: -0.39464098}
       - {x: 1.4994268, y: -0.06267905}
---- !u!114 &1325609225
+--- !u!114 &658673917623964183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -464,7 +461,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5610989576779513797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
+  m_Script: {fileID: 11500000, guid: e2c2b6007ee42d742b6da3102b79ecf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 45

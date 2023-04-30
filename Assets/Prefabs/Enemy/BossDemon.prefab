@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 1183644724916709255}
   - component: {fileID: 1183644724916709254}
   - component: {fileID: 1183644724916709273}
-  - component: {fileID: 1183644724916709272}
   - component: {fileID: 1183644724916709275}
+  - component: {fileID: 8577629832906795926}
   m_Layer: 8
   m_Name: BossDemon
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   groundDistance: 0.1
   wallDistance: 0.2
   ceilingDistance: 0.1
---- !u!114 &1183644724916709272
+--- !u!114 &1183644724916709275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,10 +185,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183644724916709276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc9486ef50398f4ba0f3cf4d51bd93b, type: 3}
+  m_Script: {fileID: 11500000, guid: 162d27a5241802b45952bb0cac9db744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageableHit:
+  finishFlag: {fileID: 0}
+  walkSpeed: 5
+  walkStopRate: 2
+  attackZone: {fileID: 1183644725416984603}
+  cliffDetectionZone: {fileID: 1183644725909078869}
+  hasTarget: 0
+--- !u!114 &8577629832906795926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183644724916709276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef2a4857fc616e4b9b7efa867bad282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDamageableHit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1183644724916709275}
@@ -203,9 +221,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   enemyKillPoint:
     m_PersistentCalls:
       m_Calls: []
@@ -214,23 +229,6 @@ MonoBehaviour:
   isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
---- !u!114 &1183644724916709275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183644724916709276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 162d27a5241802b45952bb0cac9db744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 5
-  walkStopRate: 2
-  attackZone: {fileID: 1183644725416984603}
-  cliffDetectionZone: {fileID: 1183644725909078869}
-  hasTarget: 0
 --- !u!1 &1183644725247996059
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1183644725247996056}
   - component: {fileID: 1183644725247996038}
-  - component: {fileID: 1183644725247996057}
+  - component: {fileID: 2827546730690904018}
   m_Layer: 10
   m_Name: KnifeAttack
   m_TagString: Untagged
@@ -297,7 +295,7 @@ PolygonCollider2D:
       - {x: -1.2501655, y: -0.5826436}
       - {x: -2.1433291, y: 0.31817102}
       - {x: -3.2825098, y: 3.4009874}
---- !u!114 &1183644725247996057
+--- !u!114 &2827546730690904018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +304,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183644725247996059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
+  m_Script: {fileID: 11500000, guid: e2c2b6007ee42d742b6da3102b79ecf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 60

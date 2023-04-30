@@ -23,12 +23,12 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damageable damageable = collision.GetComponent<Damageable>();
-        if (damageable != null)
+        EnemyDamageable enemyDamageable = collision.GetComponent<EnemyDamageable>();
+        if (enemyDamageable != null)
         {
             Destroy(gameObject);
             Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
-            damageable.Hit(damage, deliveredKnockback);            
+            enemyDamageable.Hit(damage, deliveredKnockback);            
         }
     }
 }

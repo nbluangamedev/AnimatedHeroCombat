@@ -5,7 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(EnemyDamageable))]
 public class BossController : MonoBehaviour
 {
     [SerializeField] GameObject finishFlag;
@@ -18,7 +18,7 @@ public class BossController : MonoBehaviour
     Rigidbody2D rb;
     TouchingDirections touchingDirections;
     Animator animator;
-    Damageable damageable;
+    EnemyDamageable enemyDamageable;
 
     public enum WalkableDirection { Right, Left }
     private Vector2 walkDirectionVector = Vector2.right;
@@ -89,7 +89,7 @@ public class BossController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
-        damageable = GetComponent<Damageable>();
+        enemyDamageable = GetComponent<EnemyDamageable>();
     }
 
     // Update is called once per frame
@@ -109,7 +109,7 @@ public class BossController : MonoBehaviour
             FlipDirection();
         }
 
-        if (!damageable.LockVelocity)
+        if (!enemyDamageable.LockVelocity)
         {
             if (CanMove && touchingDirections.IsGrounded)
                 rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);

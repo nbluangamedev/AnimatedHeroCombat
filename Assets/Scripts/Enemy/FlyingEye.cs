@@ -12,7 +12,7 @@ public class FlyingEye : MonoBehaviour
 
     Animator animator;
     Rigidbody2D rb;
-    Damageable damageable;
+    EnemyDamageable enemyDamageable;
 
     Transform nextWaypoint;
     int waypointNum = 0;
@@ -43,7 +43,7 @@ public class FlyingEye : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        damageable = GetComponent<Damageable>();
+        enemyDamageable = GetComponent<EnemyDamageable>();
     }
 
     private void Start()
@@ -60,7 +60,7 @@ public class FlyingEye : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (damageable.IsAlive)
+        if (enemyDamageable.IsAlive)
         {
             if (CanMove)
             {

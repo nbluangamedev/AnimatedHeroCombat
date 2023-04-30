@@ -1,17 +1,69 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.Utilities;
 using UnityEngine.SceneManagement;
 
 public class GameManager : BaseManager<GameManager>
-{   
+{
+    public UnityEvent<int, int> healthChanged;
+    public UnityEvent<float, float> manaChanged;
+
+    private int maxHealth = 200;
+    public int MaxHealth => maxHealth;
+
+    private int health = 200;
+
+    public int Health
+    {
+        get
+        {
+            return health;
+        }
+        set
+        {
+            health = value;
+            if (health <= 0)
+            {
+                healthChanged?.Invoke(health, maxHealth);
+            }
+        }
+    }
+
+    private float mana = 100f;
+    public float Mana
+    {
+        get
+        {
+            return mana;
+        }
+        set
+        {
+            mana = value;
+            manaChanged?.Invoke(mana, maxMana);
+        }
+    }
+    private float maxMana = 100f;
+    public float MaxMana => maxMana;
+
     private int scores = 0;
     public int Scores => scores;
 
     private bool isPlaying = false;
     public bool IsPlaying => isPlaying;
+
+    private int playerLife = 3;
+
+    public int PlayerLife => playerLife;
+
+    public void UpdatePlayerLife(int v)
+    {
+        playerLife = v;
+    }
 
     public void UpdateScores(int v)
     {

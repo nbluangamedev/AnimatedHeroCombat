@@ -10176,6 +10176,8 @@ MonoBehaviour:
   touchParticle: {fileID: 0}
   noFriction: {fileID: 6200000, guid: 44924c3a4632a2c4ca1a53b19ad2045b, type: 2}
   fullFriction: {fileID: 6200000, guid: 8dc0973390255b14c8e01d5bc98ec38c, type: 2}
+  manaRequire: 20
+  currentMana: 0
 --- !u!114 &3209019684047394446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10280,9 +10282,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   enemyKillPoint:
     m_PersistentCalls:
       m_Calls: []
@@ -10315,8 +10314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f36bdec2a4d2240b99b7d65004554b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLive: 3
-  playerLiveText: {fileID: 0}
   checkpointPosition: {fileID: 0}
 --- !u!114 &8071413788240270402
 MonoBehaviour:
@@ -10332,6 +10329,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 4707933920850609771}
   firePrefab: {fileID: 8143192255194170009, guid: 5d93558766e0b754eada53d0915857e6, type: 3}
+  manaRequire: 20
+  updateMana: 1
+  currentMana: 0
 --- !u!114 &1854319040
 MonoBehaviour:
   m_ObjectHideFlags: 0

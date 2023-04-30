@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(EnemyDamageable))]
 public class GoblinController : MonoBehaviour
 {
     [SerializeField]
@@ -14,7 +14,7 @@ public class GoblinController : MonoBehaviour
     Rigidbody2D rb;
     TouchingDirections touchingDirections;
     Animator animator;
-    Damageable damageable;
+    EnemyDamageable enemyDamageable;
 
     public enum WalkableDirection { Right, Left }
     private Vector2 walkDirectionVector = Vector2.right;
@@ -85,7 +85,7 @@ public class GoblinController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
-        damageable = GetComponent<Damageable>();
+        enemyDamageable = GetComponent<EnemyDamageable>();
     }
 
     // Update is called once per frame
@@ -105,7 +105,7 @@ public class GoblinController : MonoBehaviour
             FlipDirection();
         }
 
-        if (!damageable.LockVelocity)
+        if (!enemyDamageable.LockVelocity)
         {
             if (CanMove)
                 rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);

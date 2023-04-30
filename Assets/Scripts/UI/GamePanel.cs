@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class GamePanel : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI numberOfLife;
     [SerializeField] TextMeshProUGUI numberOfDiamond;
     [SerializeField] TextMeshProUGUI timeText;
     //[SerializeField] VariableJoystick joystick;
+
+
 
     public TextMeshProUGUI NumberOfDiamond => numberOfDiamond;
     private float timeRemaining;
@@ -15,6 +18,10 @@ public class GamePanel : MonoBehaviour
 
     private void Awake()
     {
+        if (GameManager.HasInstance)
+        {
+            numberOfLife.text = "Live: " + GameManager.Instance.PlayerLife;
+        }
         SetTimeRemain(600);
     }
 
@@ -51,6 +58,11 @@ public class GamePanel : MonoBehaviour
                     UIManager.Instance.ActiveLosePanel(true);
                 }
             }
+        }
+
+        if (GameManager.HasInstance)
+        {
+            numberOfLife.text = "Live: " + GameManager.Instance.PlayerLife;
         }
     }
 

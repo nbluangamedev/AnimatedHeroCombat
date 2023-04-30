@@ -138,6 +138,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private bool CanSpellAttack;
+    public int manaRequire = 20;
+    public float currentMana;
+    public float maxMana;
+
     private void Update()
     {
         if (isDashing)
@@ -163,6 +168,13 @@ public class PlayerController : MonoBehaviour
         {
             rb.sharedMaterial = fullFriction;
         }
+
+        if (GameManager.HasInstance)
+        {
+            currentMana = GameManager.Instance.Mana;
+        }
+
+        CanSpellAttack = currentMana >= manaRequire ? true : false;
     }
 
     private void FixedUpdate()
@@ -250,7 +262,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            if (CanAttack && touchingDirections.IsGrounded)
+            if (CanAttack && touchingDirections.IsGrounded && CanSpellAttack)
             {
                 animator.SetTrigger(AnimationStrings.spellAttackTrigger);
                 AudioManager.Instance.PlaySE(AUDIO.SE_SPELLATTACK, 0.4f);

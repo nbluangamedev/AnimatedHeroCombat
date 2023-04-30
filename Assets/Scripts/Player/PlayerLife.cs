@@ -10,10 +10,10 @@ public class PlayerLife : MonoBehaviour
     Damageable damageable;
     GameObject player;
 
-    [SerializeField] int playerLive = 3;
-    [SerializeField] TMP_Text playerLiveText;
+    //[SerializeField] TMP_Text playerLiveText;
     [SerializeField] Transform checkpointPosition;
 
+    private int playerLive;
 
     private void Awake()
     {
@@ -21,21 +21,17 @@ public class PlayerLife : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         damageable = player.GetComponent<Damageable>();
-        playerLiveText.text = "Lives: " + playerLive;
-    }
-
-    private void Start()
-    {
-
     }
 
     private void Update()
-    {
-        playerLiveText.text = "Lives: " + playerLive;
-
-        if (damageable.Health <= 0)
+    {      
+        if (GameManager.HasInstance)
         {
-            Die();
+            playerLive = GameManager.Instance.PlayerLife;
+            if (GameManager.Instance.Health <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -68,15 +64,20 @@ public class PlayerLife : MonoBehaviour
     //This function reference in animator
     private void Restart()
     {
-        transform.position = checkpointPosition.position;
-        rb.bodyType = RigidbodyType2D.Dynamic;
-        animator.Rebind();
-        damageable.Health = damageable.MaxHealth;
-        playerLive -= 1;
-        if (playerLive <= 0 && GameManager.HasInstance)
+        if (GameManager.HasInstance)
         {
-            GameManager.Instance.PauseGame();
-            UIManager.Instance.ActiveLosePanel(true);
+            transform.position = checkpointPosition.position;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            animator.Rebind();
+            GameManager.Instance.Health = GameManager.Instance.MaxHealth;
+            playerLive -= 1;
+            GameManager.Instance.UpdatePlayerLife(playerLive);
+
+            if (playerLive <= 0)
+            {
+                GameManager.Instance.PauseGame();
+                UIManager.Instance.ActiveLosePanel(true);
+            }
         }
     }
 }

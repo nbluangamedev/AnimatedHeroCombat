@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3445346972203244802}
   - component: {fileID: 3445346972203244803}
   - component: {fileID: 3445346972203244800}
-  - component: {fileID: 3445346972203244801}
+  - component: {fileID: 6242662866809841000}
   m_Layer: 8
   m_Name: Mushroom
   m_TagString: Enemy
@@ -194,7 +194,7 @@ MonoBehaviour:
   attackDetectionZone: {fileID: 3445346972590229696}
   cliffDetectionZone: {fileID: 3445346972246998595}
   hasTarget: 0
---- !u!114 &3445346972203244801
+--- !u!114 &6242662866809841000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,10 +203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3445346972203244922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc9486ef50398f4ba0f3cf4d51bd93b, type: 3}
+  m_Script: {fileID: 11500000, guid: bef2a4857fc616e4b9b7efa867bad282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageableHit:
+  enemyDamageableHit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3445346972203244800}
@@ -221,9 +221,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   enemyKillPoint:
     m_PersistentCalls:
       m_Calls: []
@@ -402,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3445346972990452757}
   - component: {fileID: 3445346972990452759}
-  - component: {fileID: 3445346972990452756}
+  - component: {fileID: 2622999961587702985}
   m_Layer: 10
   m_Name: Attack2
   m_TagString: Untagged
@@ -454,7 +451,7 @@ PolygonCollider2D:
       - {x: 1.0414212, y: -0.8469784}
       - {x: 1.4251368, y: -0.5701394}
       - {x: 1.471483, y: -0.111195}
---- !u!114 &3445346972990452756
+--- !u!114 &2622999961587702985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,7 +460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3445346972990452754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
+  m_Script: {fileID: 11500000, guid: e2c2b6007ee42d742b6da3102b79ecf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 20
@@ -478,7 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3445346973203415911}
   - component: {fileID: 3445346973203415913}
-  - component: {fileID: 3445346973203415910}
+  - component: {fileID: 7998367001162878281}
   m_Layer: 10
   m_Name: Attack1
   m_TagString: Untagged
@@ -531,7 +528,7 @@ PolygonCollider2D:
       - {x: 0.79428977, y: -0.8205699}
       - {x: 1.2333136, y: -0.59171844}
       - {x: 1.2500626, y: -0.1146152}
---- !u!114 &3445346973203415910
+--- !u!114 &7998367001162878281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -540,7 +537,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3445346973203415908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee34e567c136e84e95b405405e14a65, type: 3}
+  m_Script: {fileID: 11500000, guid: e2c2b6007ee42d742b6da3102b79ecf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
