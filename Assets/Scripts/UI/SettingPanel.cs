@@ -70,7 +70,9 @@ public class SettingPanel : MonoBehaviour
         if (UIManager.HasInstance && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
         {
             UIManager.Instance.ActiveSettingPanel(false);
-        }else
+            UIManager.Instance.ActiveMobilePanel(true);
+        }
+        else
         {
             UIManager.Instance.ActiveSettingPanel(false);
         }
@@ -80,6 +82,7 @@ public class SettingPanel : MonoBehaviour
             if (GameManager.Instance.IsPlaying == false && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
             {
                 UIManager.Instance.ActivePausePanel(true);
+                UIManager.Instance.ActiveMobilePanel(false);
             }
         }
     }
@@ -97,6 +100,7 @@ public class SettingPanel : MonoBehaviour
         if (UIManager.HasInstance && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
         {
             UIManager.Instance.ActiveSettingPanel(false);
+            UIManager.Instance.ActiveMobilePanel(true);
         }
         else
         {
@@ -108,6 +112,7 @@ public class SettingPanel : MonoBehaviour
             if (GameManager.Instance.IsPlaying == false && !UIManager.Instance.MenuPanel.gameObject.activeSelf)
             {
                 UIManager.Instance.ActivePausePanel(true);
+                UIManager.Instance.ActiveMobilePanel(false);
             }
         }
     }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class MenuPanel : MonoBehaviour
 {
     [SerializeField] GameObject howToPlayBtn;
-
     [SerializeField] GameObject howToPlayPanel;
 
     public void OnStartButtonClick()
@@ -18,7 +17,7 @@ public class MenuPanel : MonoBehaviour
 
         if (AudioManager.HasInstance)
         {
-            AudioManager.Instance.FadeOutBGM(1f);
+            AudioManager.Instance.FadeOutBGM(2f);
             AudioManager.Instance.PlayBGM(AUDIO.BGM_GOOD_DAY_SO_FAR_PERCUSSION);
         }
         

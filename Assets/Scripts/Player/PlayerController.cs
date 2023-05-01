@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpImpulse = 10f;
     [SerializeField] float airWalkSpeed = 5f;
 
-    [SerializeField] Vector2 moveInput;
+    //[SerializeField] Vector2 moveInput;
     [SerializeField] bool CanDoubleJump;
     [SerializeField] TrailRenderer trailRenderer;
 
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (moveInput.x != 0)
+        if (UIManager.Instance.MobilePanel.fixedJoystick.Direction.x != 0)
         {
             rb.sharedMaterial = noFriction;
         }
@@ -186,7 +186,15 @@ public class PlayerController : MonoBehaviour
 
         if (!damageable.LockVelocity)
         {
-            rb.velocity = new Vector2(moveInput.x * CurrentSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(UIManager.Instance.MobilePanel.fixedJoystick.Direction.x * CurrentSpeed, rb.velocity.y);
+            //Debug.Log(rb.velocity.x);
+            if(IsAlive)
+            {
+                IsRunning = UIManager.Instance.MobilePanel.fixedJoystick.Direction != Vector2.zero;
+
+                SetFacingDirection(UIManager.Instance.MobilePanel.fixedJoystick.Direction);
+            }
+            else IsRunning = false;
         }
 
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
@@ -207,20 +215,17 @@ public class PlayerController : MonoBehaviour
             fallParticle.Clear();
         }
     }
+      
+    //public void OnRun(InputAction.CallbackContext context)
+    //{
+    //    if (IsAlive)
+    //    {
+    //        IsRunning = run != Vector2.zero;
 
-    public void OnRun(InputAction.CallbackContext context)
-    {
-        moveInput = context.ReadValue<Vector2>();
-
-        if (IsAlive)
-        {
-            IsRunning = moveInput != Vector2.zero;
-
-            SetFacingDirection(moveInput);
-        }
-        else IsRunning = false;
-
-    }
+    //        SetFacingDirection(run);
+    //    }
+    //    else IsRunning = false;
+    //}
 
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -296,7 +301,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.velocity = new Vector2(moveInput.x * dashingPower, 0f);
+        rb.velocity = new Vector2(UIManager.Instance.MobilePanel.fixedJoystick.Direction.x * dashingPower, 0f);
         trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         trailRenderer.emitting = false;
