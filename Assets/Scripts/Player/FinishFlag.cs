@@ -28,6 +28,7 @@ public class FinishFlag : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 UIManager.Instance.ActiveVictoryPanel(true);
+                UIManager.Instance.ActiveMobilePanel(false);
                 AudioManager.Instance.PlaySE(AUDIO.SE_39_ABSORB_04);
                 return;
             }
