@@ -19,19 +19,21 @@ public class MobilePanel : MonoBehaviour
 
     public void OnSettingButtonClick()
     {
-        if (UIManager.HasInstance)
+        if (UIManager.HasInstance && GameManager.HasInstance)
         {
             UIManager.Instance.ActiveSettingPanel(true);
             UIManager.Instance.ActiveMobilePanel(false);
+            GameManager.Instance.PauseGame();
         }
     }
 
     public void OnPauseButtonClick()
     {
-        if (UIManager.HasInstance)
+        if (UIManager.HasInstance && GameManager.HasInstance)
         {
             UIManager.Instance.ActivePausePanel(true);
             UIManager.Instance.ActiveMobilePanel(false);
+            GameManager.Instance.PauseGame();
         }
     }
 }

@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handleRange: 1
+  handleRange: 2
   deadZone: 0
-  axisOptions: 0
+  axisOptions: 1
   snapX: 0
   snapY: 0
   background: {fileID: 2929252283123773938}
