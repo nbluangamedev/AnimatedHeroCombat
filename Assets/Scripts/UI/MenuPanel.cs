@@ -6,7 +6,7 @@ public class MenuPanel : MonoBehaviour
 {
     [SerializeField] GameObject howToPlayBtn;
 
-    [SerializeField] GameObject howToPlayImage;
+    [SerializeField] GameObject howToPlayPanel;
 
     public void OnStartButtonClick()
     {
@@ -46,13 +46,13 @@ public class MenuPanel : MonoBehaviour
 
     public void OnHowToPlayButtonClick()
     {
-        howToPlayImage.SetActive(true);
+        howToPlayPanel.SetActive(true);
         howToPlayBtn.SetActive(false);
     }
 
-    public void OnHowToPlayButtonImgClick()
+    public void OnHowToPlayPanelClick()
     {
-        howToPlayImage.SetActive(false);
+        howToPlayPanel.SetActive(false);
         howToPlayBtn.SetActive(true);
     }
 }

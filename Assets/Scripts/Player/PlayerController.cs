@@ -218,7 +218,8 @@ public class PlayerController : MonoBehaviour
 
             SetFacingDirection(moveInput);
         }
-        else isRunning = false;
+        else IsRunning = false;
+
     }
 
     public void OnJump(InputAction.CallbackContext context)

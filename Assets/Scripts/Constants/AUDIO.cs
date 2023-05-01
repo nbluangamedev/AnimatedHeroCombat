@@ -11,6 +11,7 @@
 	  public const string SE_08_BITE = "08_Bite";
 	  public const string SE_08_STEP_ROCK = "08_Step_rock";
 	  public const string SE_08_STEP_ROCK_02 = "08_Step_rock_02";
+	  public const string SE_13_ICE_EXPLOSION_01 = "13_Ice_explosion_01";
 	  public const string SE_15_IMPACT_FLESH_02 = "15_Impact_flesh_02";
 	  public const string SE_18_THUNDER_02 = "18_Thunder_02";
 	  public const string SE_22_SLASH = "22_Slash";
@@ -38,6 +39,7 @@
 	  public const string SE_COLLECT_POINT = "Collect_Point";
 	  public const string SE_DEATH = "Death";
 	  public const string SE_MINIMALIST6 = "Minimalist6";
+	  public const string SE_NEW30_EARTH = "New30_Earth";
 	  public const string SE_SPELLATTACK = "SpellAttack";
 	  public const string SE_SWORD_05 = "SWORD_05";
 	  public const string SE_SWORD_09 = "SWORD_09";

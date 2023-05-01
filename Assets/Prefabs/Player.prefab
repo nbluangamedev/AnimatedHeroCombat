@@ -10178,6 +10178,7 @@ MonoBehaviour:
   fullFriction: {fileID: 6200000, guid: 8dc0973390255b14c8e01d5bc98ec38c, type: 2}
   manaRequire: 20
   currentMana: 0
+  maxMana: 0
 --- !u!114 &3209019684047394446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10330,8 +10331,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 4707933920850609771}
   firePrefab: {fileID: 8143192255194170009, guid: 5d93558766e0b754eada53d0915857e6, type: 3}
   manaRequire: 20
-  updateMana: 1
-  currentMana: 0
 --- !u!114 &1854319040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10725,7 +10724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401555583736302764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3, y: -0.96, z: 0}
+  m_LocalPosition: {x: 2.4, y: -0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3614048278003314769}
