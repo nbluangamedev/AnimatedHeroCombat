@@ -197,6 +197,8 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Ground"))
         {
             fallParticle.Play();
+            AudioManager.Instance.PlaySE(AUDIO.SE_45_LANDING);
+
         }
     }
 
