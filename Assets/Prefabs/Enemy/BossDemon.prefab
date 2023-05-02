@@ -221,9 +221,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  enemyKillPoint:
-    m_PersistentCalls:
-      m_Calls: []
   maxHealth: 500
   health: 500
   isAlive: 1
@@ -286,13 +283,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 3.1045177, y: 1.3139911}
-      - {x: 3.538298, y: 0.17435199}
-      - {x: 3.553759, y: -1.0277333}
-      - {x: 3.1832657, y: -2.359334}
-      - {x: 2.2299333, y: -2.3971262}
+    - - {x: 3.046575, y: 1.3333061}
+      - {x: 3.5189803, y: 0.30956775}
+      - {x: 3.5537589, y: -1.143634}
+      - {x: 3.028735, y: -2.301385}
+      - {x: 2.4810421, y: -2.3198595}
       - {x: 0.84912884, y: -1.7312979}
-      - {x: -1.2501655, y: -0.5826436}
+      - {x: -1.2888007, y: -0.6599103}
       - {x: -2.1433291, y: 0.31817102}
       - {x: -3.2825098, y: 3.4009874}
 --- !u!114 &2827546730690904018
@@ -354,7 +351,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.86215657, y: -0.37387085}
+  m_Offset: {x: 0.9780581, y: -0.37387085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -365,7 +362,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.6194143, y: 4.0348206}
+  m_Size: {x: 5.8512163, y: 4.0348206}
   m_EdgeRadius: 0
 --- !u!114 &1183644725416984603
 MonoBehaviour:

@@ -7,9 +7,11 @@ public class EnemyDetectionZone : MonoBehaviour
 {
     public UnityEvent noEnemyColliderRemain;
     public UnityEvent noBossEnemyColliderRemain;
+    public UnityEvent noDemonColliderRemain;
 
     public List<Collider2D> detectedEnemyColliders = new List<Collider2D>();
     public List<Collider2D> detectedBossColliders = new List<Collider2D>();
+    public List<Collider2D> detectedDemonColliders = new List<Collider2D>();
 
     //Collider2D col;
 
@@ -26,6 +28,11 @@ public class EnemyDetectionZone : MonoBehaviour
         }
 
         if (collision.CompareTag("BossEnemy"))
+        {
+            detectedBossColliders.Add(collision);
+        }
+
+        if (collision.CompareTag("Demon"))
         {
             detectedBossColliders.Add(collision);
         }
@@ -48,6 +55,15 @@ public class EnemyDetectionZone : MonoBehaviour
             if (detectedBossColliders.Count <= 0)
             {
                 noBossEnemyColliderRemain.Invoke();
+            }
+        }
+
+        if (collision.CompareTag("Demon"))
+        {
+            detectedBossColliders.Remove(collision);
+            if (detectedBossColliders.Count <= 0)
+            {
+                noDemonColliderRemain.Invoke();
             }
         }
     }

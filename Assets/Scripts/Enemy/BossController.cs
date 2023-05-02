@@ -19,6 +19,7 @@ public class BossController : MonoBehaviour
     TouchingDirections touchingDirections;
     Animator animator;
     EnemyDamageable enemyDamageable;
+    EnemyDetectionZone enemyDetectionZone;
 
     public enum WalkableDirection { Right, Left }
     private Vector2 walkDirectionVector = Vector2.right;
@@ -90,8 +91,9 @@ public class BossController : MonoBehaviour
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
         enemyDamageable = GetComponent<EnemyDamageable>();
+        enemyDetectionZone = GetComponent<EnemyDetectionZone>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -146,7 +148,7 @@ public class BossController : MonoBehaviour
         }
     }
 
-    private void FlagSpawn()
+    public void FlagSpawn()
     {
         finishFlag.SetActive(true);
     }

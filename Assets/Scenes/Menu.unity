@@ -619,11 +619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988848039245265716, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7988848039245879787, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7988848039390932399, guid: fecbbce251c4f0a429e182db33042ed4, type: 3}
       propertyPath: m_AnchorMax.y

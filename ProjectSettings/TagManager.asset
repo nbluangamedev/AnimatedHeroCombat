@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - BossEnemy
   - Indicator
+  - Demon
   layers:
   - Default
   - TransparentFX
