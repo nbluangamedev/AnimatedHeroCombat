@@ -10027,7 +10027,6 @@ GameObject:
   - component: {fileID: 3362858816758681826}
   - component: {fileID: 3209019684047394446}
   - component: {fileID: 1099501069}
-  - component: {fileID: 1099501071}
   - component: {fileID: 1478313177}
   - component: {fileID: 103169575}
   - component: {fileID: 1319627105493708856}
@@ -10227,35 +10226,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1099501071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614048278003314778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b58e6209757bab4ea68024b8df760d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.1
-  wallDistance: 0.1
-  ceilingDistance: 0.1
 --- !u!114 &1478313177
 MonoBehaviour:
   m_ObjectHideFlags: 0
