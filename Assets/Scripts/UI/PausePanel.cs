@@ -23,6 +23,15 @@ public class PausePanel : MonoBehaviour
         }
     }
 
+    public void OnClickedRestartButton()
+    {
+        if (GameManager.HasInstance)
+        {
+            GameManager.Instance.RestartGame();
+            UIManager.Instance.ActivePausePanel(false);
+        }
+    }
+
     public void OnClickedQuitButton()
     {
         if (GameManager.HasInstance)
