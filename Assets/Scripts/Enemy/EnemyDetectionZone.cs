@@ -60,8 +60,8 @@ public class EnemyDetectionZone : MonoBehaviour
 
         if (collision.CompareTag("Demon"))
         {
-            detectedBossColliders.Remove(collision);
-            if (detectedBossColliders.Count <= 0)
+            detectedDemonColliders.Remove(collision);
+            if (detectedDemonColliders.Count <= 0)
             {
                 noDemonColliderRemain.Invoke();
             }
